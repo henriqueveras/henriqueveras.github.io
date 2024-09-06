@@ -1,0 +1,100 @@
+---
+title: "Econometria I"
+author: "Exame 1 (Gabarito)"
+affiliation: 
+abstract:
+thanks:
+keywords:
+date: 26/10/2023
+output:
+  pdf_document:
+    highlight: default
+    #citation_package:
+    keep_tex: false
+    #fig_caption: true
+    latex_engine: pdflatex
+fontsize: 11pt
+geometry: margin=1in
+#bibliography:
+#biblio-style:
+header-includes:
+- \usepackage{indentfirst}
+- \usepackage{graphicx}
+- \usepackage{geometry}
+- \usepackage{subfigure}
+- \usepackage{amsmath}
+- \usepackage{listings}
+- \usepackage{tikz}
+- \usetikzlibrary{matrix}
+---
+
+
+
+\vspace{0.25in}
+
+1. 
+    a. Sabemos que $\mathbf{b}_1=(\mathbf{X'X})^{-1}\mathbf{X'y}$.
+    $$\begin{split}E[\mathbf{b}_1|\mathbf{X},\mathbf{Z}] = & E[(\mathbf{X'X})^{-1}\mathbf{X'y}|\mathbf{X},\mathbf{Z}] \\
+      = & (\mathbf{X'X})^{-1}\mathbf{X'}E[\mathbf{X\beta}_2+\mathbf{Z\gamma}+\mathbf{\varepsilon}_2|\mathbf{X},\mathbf{Z}]\\
+      = & \mathbf{\beta}_2+(\mathbf{X'X})^{-1}\mathbf{X'Z\gamma}\end{split}$$ caso o pressuposto $E[\varepsilon_2|\mathbf{X,Z}]=0$ seja satisfeito.
+      Para encontrarmos a variância:
+      $$\begin{split} Var[\mathbf{b}_1|\mathbf{X},\mathbf{Z}] = & Var[(\mathbf{X'X})^{-1}\mathbf{X'y}|\mathbf{X},\mathbf{Z}]\\
+      = & (\mathbf{X'X})^{-1}\mathbf{X}'Var[\mathbf{X\beta}_2+\mathbf{Z\gamma}+\mathbf{\varepsilon}_2|\mathbf{X},\mathbf{Z}]\mathbf{X}(\mathbf{X'X})^{-1}\\
+      = & \sigma^2(\mathbf{X'X})^{-1}\end{split}$$ caso o pressuposto $Var[\varepsilon_2|\mathbf{X,Z}]=\sigma^2\mathbf{I}$ seja satisfeito.
+    b. Aplicando o teorema FWL, temos que $\mathbf{b}_2=(\mathbf{X'M_zX})^{-1}\mathbf{X'M_zy}$. Portanto,
+    $$\begin{split}E[\mathbf{b}_2|\mathbf{X},\mathbf{Z}] = & E(\mathbf{X'M_zX})^{-1}\mathbf{X'M_zy}|\mathbf{X},\mathbf{Z}] \\
+      = &(\mathbf{X'M_zX})^{-1}\mathbf{X'M_z}E[\mathbf{X\beta}_1+\mathbf{\varepsilon}_1|\mathbf{X},\mathbf{Z}]\\
+      = & \mathbf{\beta}_1\end{split}$$ caso o pressuposto $E[\varepsilon_1|\mathbf{X}]=0$ seja satisfeito.
+      Encontrando a variância:
+      $$\begin{split}Var[\mathbf{b}_2|\mathbf{X},\mathbf{Z}] = & Var[(\mathbf{X'M_zX})^{-1}\mathbf{X'M_zy}|\mathbf{X},\mathbf{Z}] \\
+      = &(\mathbf{X'M_zX})^{-1}\mathbf{X'M_z}Var[\mathbf{X\beta}_1+\mathbf{\varepsilon}_1|\mathbf{X},\mathbf{Z}]\mathbf{M_zX(\mathbf{X'M_zX})^{-1}}\\
+      = & \sigma^2(\mathbf{X'M_zX})^{-1}\end{split}$$ caso o pressuposto $Var[\varepsilon_1|\mathbf{X,Z}]=\sigma^2\mathbf{I}$ seja satisfeito.
+    c. Caso o modelo 1 represente o verdadeiro processo gerador de dados, $E[\mathbf{b}_1|\mathbf{X},\mathbf{Z}] =\mathbf{\beta}_1$ e $Var[\mathbf{b}_1|\mathbf{X},\mathbf{Z}]=\sigma^2(\mathbf{X'X})^{-1}$. Portanto, $E[\mathbf{b}_1|\mathbf{X},\mathbf{Z}] = E[\mathbf{b}_2|\mathbf{X},\mathbf{Z}]=\mathbf{\beta}_1$. Em relação às variâncias, como $\mathbf{M_z}$ é uma matrix de projeção ortogonal, temos que $\mathbf{X'M_zX}\leq\mathbf{X'X}$. Então, $\sigma^2(\mathbf{X'M_zX})^{-1}\geq\sigma^2(\mathbf{X'X})^{-1}$ $\Rightarrow$ $Var[\mathbf{b}_2|\mathbf{X},\mathbf{Z}]\geq Var[\mathbf{b}_1|\mathbf{X},\mathbf{Z}]$
+    d. Caso o modelo 1 represente o verdadeiro processo gerador de dados, $E[\mathbf{b}_2|\mathbf{X},\mathbf{Z}]=\mathbf{\beta}_2$, enquanto que $E[\mathbf{b}_1|\mathbf{X},\mathbf{Z}]=\mathbf{\beta}_2+(\mathbf{X'X})^{-1}\mathbf{X'Z\gamma}$,  e $Var[\mathbf{b}_2|\mathbf{X},\mathbf{Z}]=\sigma^2(\mathbf{X'M_zX})^{-1}$. Portanto, também temos neste caso que $Var[\mathbf{b}_2|\mathbf{X},\mathbf{Z}]\geq Var[\mathbf{b}_1|\mathbf{X},\mathbf{Z}]$.
+    e. Se o modelo 1 for o verdadeiro, ambos $\mathbf{b}_1$ e $\mathbf{b}_2$ são não-viesados, porém $\mathbf{b}_1$ é eficiente, pois possui menor variância. Caso o modelo 2 seja o verdadeiro, $\mathbf{b}_1$ é viesado enquanto $\mathbf{b}_2$ não. Porém $\mathbf{b}_1$ possui menor variância. Temos, portanto, um trade-off viés-variância ao comparar $\mathbf{b}_1$ e $\mathbf{b}_2$.
+  
+
+2. 
+
+    a. De acordo com as definições de $z_{1,i}$, $z_{2,i}$ e $z_{3,i}$ em termos de $x_{1,i}$, $x_{2,i}$ e $x_{3,i}$, temos que $$\mathbf{Z}=\mathbf{XA}$$ $$\begin{bmatrix}
+    \mathbf{z}_1 & \mathbf{z}_2 & \mathbf{z}_3
+    \end{bmatrix} = \begin{bmatrix}
+    \mathbf{x}_1 & \mathbf{x}_2 & \mathbf{x}_3
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 & 0 & 2 \\
+    -2 & 1 & -3 \\
+    0 & 4 & 5 \end{bmatrix}$$ Note que $\mathbf{A}$ é invertível: $$\text{det }\mathbf{A}= \text{det}\left(\begin{matrix}
+    1 & -3 \\
+    4 & 5 \end{matrix}\right) + 0 + 2\text{det}\left(\begin{matrix}
+    -2 & 1 \\
+    0 & 4 \end{matrix}\right)=5+12+2(-8)=1\neq 0$$ 
+    
+    b. Denote $\mathbf{b}$ o estimador de MQO do vetor de parâmetros $\mathbf{\beta}$ e $\mathbf{\hat{\alpha}}$ o estimador de MQO do vetor $\mathbf{\alpha}$. Portanto, temos que $\mathbf{b}=(\mathbf{X'X})^{-1}\mathbf{X'y}$ e $\mathbf{\hat{\alpha}}=(\mathbf{Z'Z})^{-1}\mathbf{Z'y}$. Usando a relação entre $\mathbf{X}$ e $\mathbf{Z}$ encontrada acima, temos que $\mathbf{X}=\mathbf{ZA}^{-1}$. Portanto, $$\begin{split}\mathbf{b} = & [(\mathbf{ZA}^{-1})'\mathbf{ZA}^{-1}]^{-1}(\mathbf{ZA}^{-1})'\mathbf{y} \\
+     = & [(\mathbf{A}')^{-1}\mathbf{Z}'\mathbf{Z}\mathbf{A}^{-1}]^{-1}(\mathbf{A}')^{-1}\mathbf{Z}'\mathbf{y}\\
+     = & \mathbf{A}(\mathbf{Z'Z})^{-1}\mathbf{A}'(\mathbf{A'})^{-1}\mathbf{Z'y}\\
+     = & \mathbf{A}\mathbf{\hat{\alpha}}\end{split}$$ Portanto, $b_1=\left(\begin{matrix} 1 & 0 & 2 \end{matrix}\right)\mathbf{\hat{\alpha}}=\hat{\alpha}_1 + 2\hat{\alpha}_3$.
+     
+    c. Os valores previstos da regressão de $\mathbf{y}$ em $\mathbf{X}$ são dados por $$\hat{\mathbf{y}}=\mathbf{X}\hat{\mathbf{b}}=\mathbf{XA}\hat{\alpha}=\mathbf{Z}\hat{\alpha}$$ o que corresponde aos valores previstos da regressão de $\mathbf{y}$ em $\mathbf{Z}$. Como os valores previstos são os mesmos, então os resíduos também são. (Outra forma de chegar este resultado é mostrar que $\mathbf{P}_X=\mathbf{P}_Z$ e $\mathbf{M}_X=\mathbf{M}_Z$).
+    Ambos os modelos são linearmente relacionados através da matriz $\mathbf{A}$. Isto significa que os dois modelos contem o mesmo conjunto de informações e que eles são equivalentes. Um modelo representa uma reformulação do outro.
+
+3. Dada a distribuição assintótica do estimador de MQO $\mathbf{b}$, podemos definir um teste assintótico baseado na estatística de teste Wald.
+    a. O estimador de MQO $\mathbf{b}$ do vetor de parâmetros $\mathbf{\beta}$ é tal que $$\sqrt{n}(\mathbf{b}-\mathbf{\beta})\xrightarrow{d}N[0,\sigma^2\mathbf{Q}^{-1}]$$ onde $\mathbf{Q}$ é tal que $\text{plim } \frac{(\mathbf{X}'\mathbf{X})}{n}=\mathbf{Q}$.
+    Defina o vetor de restrições $$g(\mathbf{\beta})=\left(\begin{matrix} \beta_1^2-\beta_2^2-5 \\
+    \beta_2+\beta_3-1\end{matrix}\right)$$ Portanto, queremos testar $$H_0: g(\mathbf{\beta})=\left(\begin{matrix} 0 \\
+    0 \end{matrix}\right) \text{ vs } H_1:g(\mathbf{\beta})\neq \left(\begin{matrix} 0 \\
+    0 \end{matrix}\right)$$ Ademais, defina $\mathbf{C}(\mathbf{b})=\frac{\partial g(\mathbf{b})}{\partial \mathbf{b}'}$. De acordo com o teorema de Slutsky, $\text{plim } g(\mathbf{b})=g(\mathbf{\beta})$ e, aplicando o método Delta, temos que $$\sqrt{n}(g(\mathbf{b})-g(\mathbf{\beta}))\xrightarrow{d}N[\mathbf{0},\mathbf{\Gamma}[Asy.Var(\mathbf{b})]\mathbf{\Gamma}']$$ onde $\mathbf{\Gamma}$ é tal que $\text{plim } \mathbf{C}(\mathbf{b})=\frac{\partial g(\mathbf{\beta})}{\partial \mathbf{\beta}'}=\mathbf{\Gamma}$.
+    A estatística Wald é dada por $$W=ng(\mathbf{b})'[\hat{\mathbf{\Gamma}}[\hat{Asy.Var(\mathbf{b})}]\hat{\mathbf{\Gamma}}']^{-1}g(\mathbf{b})$$ onde $$\hat{\mathbf{\Gamma}}=\frac{\partial g(\mathbf{b})}{\partial \mathbf{b}'}=\left(\begin{matrix} 2b_1 & -2b_2 & 0 \\
+    0 & 1 & 1 \end{matrix}\right)$$
+    b. A distribuição limite da estatística de teste sob $H_0$ é encontrada a seguir: $$\sqrt{n}g(\mathbf{b})\xrightarrow{d}N[\mathbf{0},\mathbf{\Gamma}[Asy.Var(\mathbf{b})]\mathbf{\Gamma}']$$ $$\Rightarrow \sqrt{n}[\mathbf{\Gamma}[Asy.Var(\mathbf{b})]\mathbf{\Gamma}']^{-1/2}g(\mathbf{b})\xrightarrow{d}N[\mathbf{0},\mathbf{I}]$$ $$\Rightarrow ng(\mathbf{b})'[\mathbf{\Gamma}[Asy.Var(\mathbf{b})]\mathbf{\Gamma}']^{-1}g(\mathbf{b})\xrightarrow{d}\chi^2(2)$$
+    Regra de decisão: Rejeitar $H_0$ se $W>\chi_{1-\alpha}^2(2)$.
+  
+4. 
+    a. Precisamos mostrar que $\text{plim } \mathbf{b}= \mathbf{\beta}$. O estimador de MQO é dado por $$\mathbf{b}=\mathbf{\beta}+\left(\frac{\mathbf{X}'\mathbf{X}}{n}\right)^{-1}\left(\frac{\mathbf{X}'\mathbf{\varepsilon}}{n}\right)$$ Assuma $\text{plim } \frac{(\mathbf{X}'\mathbf{X})}{n}=\mathbf{Q}$ é uma matriz positiva definida. Portanto, $$\text{plim } \mathbf{b}=\mathbf{\beta}+\mathbf{Q}^{-1}\text{plim }\left(\frac{\mathbf{X}'\mathbf{\varepsilon}}{n}\right)$$ Note que podemos escrever $\frac{\mathbf{X}'\mathbf{\varepsilon}}{n}=\frac{1}{n}\sum_{i=1}^n{\mathbf{x}_i\varepsilon_i}$. Como a média amostral é um estimador consistente da média populacional, $\text{plim }\left(\frac{\mathbf{X}'\mathbf{\varepsilon}}{n}\right)=E(\mathbf{X}'\mathbf{\varepsilon})=0$ dada a hipótese de exogeneidade $E(\varepsilon|\mathbf{X})=0$. Portanto, encontramos $\text{plim } \mathbf{b}= \mathbf{\beta}$.
+    b. Escrevemos $$\mathbf{b}-\mathbf{\beta}=\left(\frac{\mathbf{X}'\mathbf{X}}{n}\right)^{-1}\left(\frac{\mathbf{X}'\mathbf{\varepsilon}}{n}\right)$$ Multiplicando ambos os lados por $\sqrt{n}$, temos $$\sqrt{n}(\mathbf{b}-\mathbf{\beta})=\left(\frac{\mathbf{X}'\mathbf{X}}{n}\right)^{-1}\left(\frac{1}{\sqrt{n}}\right)\mathbf{X}'\mathbf{\varepsilon}$$
+    Sabemos, portanto, que a distribuição limite de $\sqrt{n}(\mathbf{b}-\mathbf{\beta})$ é a mesma de $\mathbf{Q}^{-1}\frac{1}{\sqrt{n}}\mathbf{X}'\mathbf{\varepsilon}$. Vamos estabelecer agora a distribuição limite de $\frac{1}{\sqrt{n}}\mathbf{X}'\mathbf{\varepsilon}$: $$\frac{1}{\sqrt{n}}\mathbf{X}'\mathbf{\varepsilon}=\frac{1}{\sqrt{n}}\sum{\mathbf{x}_i\varepsilon_i}=\frac{1}{\sqrt{n}}\sum{(\mathbf{x}_i\varepsilon_i}-E(\mathbf{x}_i\varepsilon_i))$$ Defina $\mathbf{w}_i=\mathbf{x}_i\varepsilon_i$, onde $\bar{\mathbf{w}}=\frac{1}{n}\sum{\mathbf{x}_i\varepsilon_i}$, e multiplique a expressão acima por n/n: $$\frac{1}{\sqrt{n}}\mathbf{X}'\mathbf{\varepsilon}=\sqrt{n}\frac{1}{n}\sum{(\mathbf{w}_i-E(\mathbf{w}_i)})=\sqrt{n}[\bar{\mathbf{w}}-E(\bar{\mathbf{w}})]$$ O vetor $\bar{\mathbf{w}}$ é a média de $n$ vetores aleatórios $i.i.d$ com média $\mathbf{0}$ e variáncia $\sigma^2\mathbf{Q}$, assumindo que os erros do modelo de regressão são homoscedásticos e não-correlacionados entre si. Aplicando o teorema do limite central de Lindeberg-Levy, como $\{\mathbf{x}_i\varepsilon_i\}_i$, $i=1,\cdots,n$, são vetores independentes, cada um distribuído com média $\mathbf{0}$ e variância $\sigma^2\mathbf{Q}<\infty$, $$\frac{1}{\sqrt{n}}\mathbf{X}'\mathbf{\varepsilon}\xrightarrow{d}N[\mathbf{0},\sigma^2\mathbf{Q}]$$ Multiplicando por $\mathbf{Q}^{-1}$, temos $$\sqrt{n}(\mathbf{b}-\mathbf{\beta})\xrightarrow{d}N[\mathbf{0},\sigma^2\mathbf{Q}^{-1}]$$ Logo, $$\mathbf{b}\stackrel{a}{\sim}N\left[\mathbf{\beta},\frac{\sigma^2}{n}\mathbf{Q}^{-1}\right]$$
+
+5. A resposta deveria abranger tanto a interpretação dos parâmetros (efeitos marginais) quanto a significância estatística. Os coeficientes são conjuntamente estatisticamente significantes a 5% ($\chi^2(2)=6.87$). Individualmente, o coeficiente de $x_2$ é estatisticamente significante a 5%, mas o de $x_3$ não é.
+Note que $\text{Efeito parcial}_j = g'(1 + 2x_2 + 3x_3)\beta_j$, onde $g'( ) < 0$ então o sinal do efeito parcial é o inverso do sinal de $\beta_j$.
+Segue-se que $E[y|x_2, x_3]$ diminui quando $x_2$ aumenta e quando $x_3$ aumenta.
+

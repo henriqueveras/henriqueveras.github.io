@@ -1,0 +1,87 @@
+---
+title: "Econometria I"
+author: "Exame 2"
+affiliation: 
+abstract:
+thanks:
+keywords:
+date: 18/12/2023
+output:
+  pdf_document:
+    highlight: default
+    #citation_package:
+    keep_tex: false
+    #fig_caption: true
+    latex_engine: pdflatex
+fontsize: 11pt
+geometry: margin=1in
+#bibliography:
+#biblio-style:
+header-includes:
+- \usepackage{indentfirst}
+- \usepackage{graphicx}
+- \usepackage{geometry}
+- \usepackage{subfigure}
+- \usepackage{amsmath}
+- \usepackage{listings}
+- \usepackage{tikz}
+- \usetikzlibrary{matrix}
+---
+
+
+Instruções:
+
+- Você precisa justificar suas respostas com cuidado e mostrar seu trabalho para obter o crédito total. Crédito parcial pode ser dado para cada pergunta.
+- Caso o tempo se esgote ou não consiga completar a argumentação/prova formal, crédito parcial poderá ser dado para uma resposta intuitiva.
+- Salvo indicação em contrário, podem ser utilizados pressupostos padrão do modelo linear. Indique claramente as suposições que você está usando para resolver cada exercício.
+- Cada item dentro de cada questāo vale 7 pontos, enquanto que a última questāo vale 16 pontos.
+
+\vspace{0.25in}
+
+1. Considere o modelo $$\begin{split} y_{1i} = & \beta y_{2i} + \varepsilon_{1i} \\
+y_{2i} = & \alpha x_{i} + \varepsilon_{2i}\end{split}$$ onde $$\mathbf{\varepsilon}_i=\begin{bmatrix} \varepsilon_{1i} \\
+\varepsilon_{2i}\end{bmatrix}\sim iid \text{ } N \left(\begin{bmatrix} 0 \\
+0 \end{bmatrix},\begin{bmatrix} \sigma_{11} & \sigma_{12} \\
+\sigma_{12} & \sigma_{22} \end{bmatrix}\right),$$ $y_{1i}$ e $y_{2i}$ são as variáveis dependentes (univariadas) e $x_i$ é uma variável aleatória exógena (univariada). A amostra contém $n$ observações de $(y_{1i}, y_{2i}, x_i)$.
+    a. Derive o estimador de OLS de $\beta$. Analise a consistência desse estimador.
+    b. Se não for consistente, você pode impor algumas restrições nos parâmetros do modelo para recuperar consistência? Interprete e discuta seu resultado.
+    c. Derive o estimador de OLS de $\alpha$. Analise a consistência desse estimador.
+    d. Se não for consistente, você pode impor algumas restrições nos parâmetros do modelo para recuperar consistência? Interprete e discuta seu resultado.
+    e. Derive o estimador IV de $\beta$ usando $x$ como instrumento e estude sua consistência. Qual estimador de $\beta$ deve ser usado? Interprete e discuta sua resultado.
+    
+\vspace{0.25in}
+    
+2. Considere o modelo de regressão linear múltipla: $$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$$ A matriz de covariância $\Sigma$ é dada por: $$\Sigma = \begin{bmatrix} \sigma_1^2 & 0 & \cdots & 0 \\ 0 & \sigma_2^2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \sigma_n^2 \end{bmatrix}$$ onde a variância do erro para a observação $i$, $\sigma_i^2$, é dada por $\lambda_i\sigma^2$, onde $\lambda_i$ é uma constante conhecida.
+    a. Discuta as implicações de se estimar o modelo acima pelo método OLS. Lembre-se de explicitar quaisquer pressupostos usados em sua resposta.
+    b. Derive o estimador de mínimos quadrados generalizados (GLS) para o modelo acima.
+    c. Compare os estimadores de OLS ($\mathbf{b}_{OLS}$) e GLS ($\mathbf{b}_{GLS}$) em termos de eficiência e consistência.
+    d. Derive uma forma de construir a matriz de covariância de $\mathbf{b}_{OLS}$ levando em conta a estrutura heteroscedástica de $\varepsilon$.
+    e. Descreva um teste formal para a presença de heteroscedasticidade no modelo de regressão. Esboce os passos para conduzir o teste e interprete os resultados.
+    
+\vspace{0.25in}
+
+3. Responda as seguintes questões sobre dados em painel:
+
+    a. Mostre que na presencia de heterogeneidade não observada correlacionada com a variável principal $X$, o estimador de desvio de media (*within estimator*) é consistente e não-viesado.
+     b. Se existe heterogeneidade não observada que não está correlacionada com a variável $X$ de interesse, qual estimador seria mais apropriado: efeito        fixo ou efeito aleatório? Por que?
+
+
+\vspace{0.25in}
+
+4. Suponha que você deseja estimar o efeito causal de um programa de acesso a crédito agrícola sobre a produtividade de pequenos agricultores. O programa consiste em concessão de crédito subsidiado para agricultores que satisfaçam os seguintes critérios: i. ter uma propriedade inferior a 4 hectares; ii. ter renda mensal inferior a 3 salários mínimos.
+
+    Suponha que o programa escolha de forma aleatória a quem fornecer o crédito dentre os agricultores inscritos no programa. Para tanto você possui uma amostra de tamanho $n=50000$, a nível individual, para o ano de 2020, com as seguintes informações:
+    - sexo
+    - idade
+    - situação matrimonial (casado(a), solteiro(a), divorciado(a), viúvo(a))
+    - tipo de cultura cultivada
+    - renda mensal média
+    - tamanho da propriedade
+    - municiípio de residência
+    - situação junto à instituição financeira: 1 se inscrito, 0 caso contrário
+    - situação do sorteio: 1 se sorteado, 0 caso contrário
+    
+    Descreva sua estratégia de identificação, explicitando equação(ões) de regressão, hipóteses, potenciais violações/ameaças à validade de sua estratégia, bem como caminhos para testar tais hipóteses e/ou ameaças. Note que sua nota nesta esta questão dependerá do nível de detalhes e formalização da sua exposição.
+
+
+

@@ -1,0 +1,75 @@
+---
+title: "Econometria I"
+author: "Segunda Chamada (Gabarito)"
+affiliation: 
+abstract:
+thanks:
+keywords:
+date: 26/10/2023
+output:
+  pdf_document:
+    highlight: default
+    #citation_package:
+    keep_tex: false
+    #fig_caption: true
+    latex_engine: pdflatex
+fontsize: 11pt
+geometry: margin=1in
+#bibliography:
+#biblio-style:
+header-includes:
+- \usepackage{indentfirst}
+- \usepackage{graphicx}
+- \usepackage{geometry}
+- \usepackage{subfigure}
+- \usepackage{amsmath}
+- \usepackage{listings}
+- \usepackage{tikz}
+- \usetikzlibrary{matrix}
+---
+
+
+
+\vspace{0.25in}
+
+---
+title: "Econometria I"
+author: "Exame 1 (Gabarito)"
+affiliation: 
+abstract:
+thanks:
+keywords:
+date: 26/10/2023
+output:
+  pdf_document:
+    highlight: default
+    #citation_package:
+    keep_tex: false
+    #fig_caption: true
+    latex_engine: pdflatex
+fontsize: 11pt
+geometry: margin=1in
+#bibliography:
+#biblio-style:
+header-includes:
+- \usepackage{indentfirst}
+- \usepackage{graphicx}
+- \usepackage{geometry}
+- \usepackage{subfigure}
+- \usepackage{amsmath}
+- \usepackage{listings}
+- \usepackage{tikz}
+- \usetikzlibrary{matrix}
+---
+
+
+
+\vspace{0.25in}
+
+1. 
+    a. O estimador de $\mathbf{\beta}_1$ obtido através da regresão de $\mathbf{y}$ em $\mathbf{X}_1$ é $$\begin{split} \mathbf{b}_1 & = (\mathbf{X_1'X_1})^{-1}\mathbf{X_1'y}\\
+ & = (\mathbf{X_1'X_1})^{-1}\mathbf{X_1'}(\mathbf{X_1\beta_1}+\mathbf{X_2\beta_2}+\varepsilon)\\
+ & = \mathbf{\beta_1} + (\mathbf{X_1'X_1})^{-1}(\mathbf{X_1'X_2})\mathbf{\beta_2}+ (\mathbf{X_1'X_1})^{-1}\mathbf{X_1'\varepsilon} \end{split}$$ e podemos deduzir o viés: $$E[\mathbf{b}|\mathbf{X}]-\mathbf{\beta_1}=\mathbf{P_{12}\beta_2}, \text{ onde } \mathbf{P}_{12}=(\mathbf{X_1'X_1})^{-1}\mathbf{X_1'X_2}$$ dado que $E[\mathbf{\varepsilon}|\mathbf{X}]=0$, seqguindo as hipóteses clássicas.
+    b. A matriz $\mathbf{P}_{12}$ é tal que $$\mathbf{P}_{12}=\left(\frac{\mathbf{X_1'X_1}}{n}\right)^{-1}\left(\frac{\mathbf{X_1'X_2}}{n}\right)$$ onde: $\mathbf{X_1'X_1}/n$ é a variãncia amostral de $\mathbf{X}_1$ e $\mathbf{X_1'X_2}/n$ é a covariãncia amostral entre $\mathbf{X}_1$ e $\mathbf{X}_2$. $\mathbf{b}_1$ será não-viesado caso $\mathbf{X_1'X_2}/n=0$, ou seja, se a covariância amostral entre $\mathbf{X}_1$ e $\mathbf{X}_2$ for exatamente zero. $\mathbf{b}_1$ também será não-viesado caso $\mathbf{\beta}_2=0$, ou seja, se $\mathbf{X}_2$ forem variáveis explicativas irrelevantes.
+    c. Suponha o seguinte processo gerador de dados: $$Q_i=\alpha + \beta P_i + \gamma R + \varepsilon,$$ onde $Q$ é a quantidade demandada, $P$ é o preço e $R$ é a renda. Com base na questão acima, o viés da estimativa de OLS da variável preço é dado por $$E[\mathbf{b}|\mathbf{X}]-\mathbf{\beta}=\left(\frac{\text{covariância amostral entre }P \text{ e } R}{\text{variãncia amostral de }P}\right)\times \gamma$$
+    Espera-se que $\gamma$ seja positivo. Caso a covariância amostral entre $P$ e $R$ seja positiva, o viés será positivo, caso contrário, negativo.
