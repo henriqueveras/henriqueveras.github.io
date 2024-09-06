@@ -20,13 +20,13 @@ author_profile: true
 > [**Old But Gold: Historical Pathways and Path Dependence**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4513384)   
 With Diogo Baerlocher, Diego Firmino, Guilherme Lambais, and Eustaquio Reis.
 
-> [**Do Bigger Legislatures Lead to Bigger Government? Evidence from a Brazilian Municipal Council Reform**](http://henriqueveras.github.io/files/2021_Municipal_Councils.pdf) *Accepted at Economía Journal - Lacea*   
-With Rodrigo Schneider
-
 > [**Early-Life Exposure to Malaria and Adult Mortality: Evidence from the Brazilian Eradication Campaign**](https://drive.google.com/file/d/1dIZK5thBKYu-IsduU5E65SdG_z4sQW8h/view?usp=sharing)  
 With Diogo Baerlocher.
 
 ## Publications
+
+> [**Do Bigger Legislatures Lead to Bigger Government? Evidence from a Brazilian Municipal Council Reform**](https://www.jstor.org/stable/27302237) *Economía  - Lacea Journal*, 2023, 22(1), 117-134.   
+With Rodrigo Schneider
 
 > [**Wrong Place, Wrong Time: The Long-Run Effects of In-Utero Exposure to Malaria on Educational Attainment**](https://www.sciencedirect.com/science/article/abs/pii/S1570677X21001179) *Economics and Human Biology*, 2022, 44, 101092.   
 
