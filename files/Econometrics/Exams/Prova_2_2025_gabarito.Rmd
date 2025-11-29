@@ -1,0 +1,388 @@
+---
+title: "Gabarito — Econometria I (Exame 2)"
+author: "Henrique Veras"
+date: "31/10/2025"
+output:
+  pdf_document:
+    highlight: default
+    keep_tex: false
+fontsize: 11pt
+geometry: margin=1in
+header-includes:
+- \usepackage{amsmath}
+---
+
+# Questão 1
+
+**a)**  
+Sob \(H_0: \beta_2 = 0\), o modelo restrito é \(y = X_1\beta_1 + \varepsilon\).  
+O estimador restrito é:
+\[
+\tilde\beta_1 = (X_1'X_1)^{-1}X_1'y.
+\]
+
+
+**b)**  
+Denote \(\hat u = y - X_1\hat\beta_1 - X_2\hat\beta_2\) e \(\tilde u = y - X_1\tilde\beta_1\).  
+As somas de quadrados dos resíduos são \(SSR_{UR} = \hat u'\hat u\) e \(SSR_R = \tilde u'\tilde u\).  
+
+A estatística de teste é:
+\[
+F = \frac{(SSR_R - SSR_{UR})/K_2}{SSR_{UR}/(n - K_1 - K_2)}
+= \frac{(\hat u'\hat u - \tilde u'\tilde u)/K_2}{\tilde u'\tilde u/(n - K_1 - K_2)}.
+\]
+Sob \(H_0\) e normalidade, \(F \sim F_{K_2, n-K_1-K_2}\).
+
+
+**c)**  
+A hipótese \(H_0: \beta_2 = 0\) equivale a \(R\beta = r\), com:
+\[
+R = [0_{K_2 \times K_1} \; I_{K_2}], \quad r = 0.
+\]
+A estatística de Wald é:
+\[
+W = (R\hat\beta - r)' [R(\widehat{\operatorname{Var}}(\hat\beta))R']^{-1} (R\hat\beta - r).
+\]
+Como \(\widehat{\operatorname{Var}}(\hat\beta) = s^2 (X'X)^{-1}\) e \(s^2 = \hat u'\hat u/(n-K)\),
+\[
+W = \frac{1}{s^2}(R\hat\beta - r)' [R(X'X)^{-1}R']^{-1}(R\hat\beta - r).
+\]
+Sob as hipóteses clássicas, \(W/J = F_{J,n-K}\), com \(J = K_2\).  
+Logo, \(W/J = F\) quando há homocedasticidade e normalidade dos erros.
+
+
+# Questão 2
+
+**a)**  
+A hipótese \(H_0: \beta_1 \bar{x}_1 + \beta_2 \bar{x}_2 = 0\) tem
+\[
+R = [\,0\; \bar{x}_1\; \bar{x}_2\,], \qquad q = 0.
+\]
+Portanto \(R\beta = \bar{x}_1\beta_1 + \bar{x}_2\beta_2\).
+
+
+
+**b)**  
+A discrepância é \(d = R\hat\beta - q = \bar{x}_1\hat\beta_1 + \bar{x}_2\hat\beta_2\).  
+A variância é:
+\[
+\widehat{\operatorname{Var}}(d) = [\,\bar{x}_1\;\bar{x}_2\,]
+  \begin{bmatrix}
+  \widehat{\operatorname{Var}}(\hat\beta_1) & \widehat{\operatorname{Cov}}(\hat\beta_1,\hat\beta_2)\\[4pt]
+  \widehat{\operatorname{Cov}}(\hat\beta_2,\hat\beta_1) & \widehat{\operatorname{Var}}(\hat\beta_2)
+  \end{bmatrix}
+  \begin{bmatrix}
+  \bar{x}_1 \\[4pt] \bar{x}_2
+  \end{bmatrix}.
+\]
+A estatística de Wald é, portanto:
+\[
+W = \frac{(\bar{x}_1\hat\beta_1 + \bar{x}_2\hat\beta_2)^2}
+          {\widehat{\operatorname{Var}}(d)}.
+\]
+Sob \(H_0\) e normalidade, \(W \sim \chi^2_1\).
+
+
+# Gabarito — Questão 2
+
+**a)**  
+A projeção do primeiro estágio é:
+\[
+\mathbf{\hat X} = \mathbf{P_Z X}, \quad \mathbf{P_Z} = \mathbf{Z}(\mathbf{Z'Z})^{-1}\mathbf{Z'}.
+\]
+Logo, o estimador 2SLS é:
+\[
+\hat\beta_{2SLS} = (\mathbf{X'P_ZX})^{-1}\mathbf{X'P_Zy}.
+\]
+
+---
+
+**b)**  
+Sob \(E[\mathbf{Z'\varepsilon}]=0\) e posto cheio de \(\mathbf{Z'X}\),
+\[
+\text{plim }\hat\beta_{2SLS}
+= (\mathbf{Q_{XZ}}'\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}})^{-1}
+(\mathbf{Q_{XZ}}'\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZY}})
+= \beta.
+\]
+Portanto, o estimador é consistente.
+
+---
+
+**c)**  
+Sob condições regulares,
+\[
+\sqrt{n}(\hat\beta_{2SLS}-\beta)
+\xrightarrow{d} N(0,\; \sigma^2 (\mathbf{Q_{XZ}}'\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}})^{-1}).
+\]
+
+---
+
+**d)**  
+
+O MQO tem variância assintótica mínima se \(E[\varepsilon|X]=0\), mas é inconsistente sob endogeneidade.  
+O 2SLS sacrifica eficiência para eliminar o viés.  
+A diferença entre eles pode ser testada pelo teste de Hausman, baseado em:
+\[
+H = (\hat\beta_{2SLS}-\hat\beta_{OLS})'
+[\operatorname{Var}(\hat\beta_{2SLS}) - \operatorname{Var}(\hat\beta_{OLS})]^{-1}
+(\hat\beta_{2SLS}-\hat\beta_{OLS}).
+\]
+
+
+# Questão 3
+
+Considere o modelo
+\[
+\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon,\qquad
+E(\boldsymbol\varepsilon\mid\mathbf{Z})=0,
+\]
+com \(\mathbf{X}\) \(n\times K\), \(\mathbf{Z}\) \(n\times L\) e \(L\ge K\). Denotaremos por
+\(\mathbf{P_Z}=\mathbf{Z}(\mathbf{Z'Z})^{-1}\mathbf{Z'}\) a matriz de projeção sobre o espaço coluna de \(\mathbf{Z}\).
+
+---
+
+## (a) Derivação do estimador 2SLS e equivalência com IV quando \(L=K\)
+
+**Derivação (intuição e forma fechada).**  
+A ideia do 2SLS é substituir \(\mathbf{X}\) por suas previsões lineares a partir de \(\mathbf{Z}\) e, em seguida, aplicar MQO. O primeiro passo projeta cada coluna de \(\mathbf{X}\) no espaço gerado por \(\mathbf{Z}\):
+\[
+\widehat{\mathbf{X}} = \mathbf{P_Z}\mathbf{X} = \mathbf{Z}(\mathbf{Z'Z})^{-1}\mathbf{Z'X}.
+\]
+O segundo passo aplica MQO de \(\mathbf{y}\) sobre \(\widehat{\mathbf{X}}\):
+\[
+\hat{\boldsymbol\beta}_{2SLS}
+= (\widehat{\mathbf{X}}'\widehat{\mathbf{X}})^{-1}\widehat{\mathbf{X}}'\mathbf{y}
+= (\mathbf{X}'\mathbf{P_Z}\mathbf{X})^{-1}\mathbf{X}'\mathbf{P_Z}\mathbf{y}.
+\]
+Esta é a forma matricial usual do estimador 2SLS:
+\[
+\boxed{\;\hat{\boldsymbol\beta}_{2SLS} = (\mathbf{X'P_ZX})^{-1}\mathbf{X'P_Zy}\; }.
+\]
+
+**Equivalência com IV quando \(L=K\).**  
+Suponha agora \(L=K\) e que \(\mathbf{Z'X}\) é invertível (posto \(K\)). Defina \(\mathbf{A}=\mathbf{Z'X}\) e \(\mathbf{B}=(\mathbf{Z'Z})^{-1}\). Então
+\[
+\mathbf{X'P_ZX} = \mathbf{X'ZBZ'X} = \mathbf{A'BA},\qquad
+\mathbf{X'P_Zy} = \mathbf{X'ZBZ'y} = \mathbf{A'B}\mathbf{Z'y}.
+\]
+Assim
+\[
+\hat{\boldsymbol\beta}_{2SLS}
+= (\mathbf{A'BA})^{-1}\mathbf{A'B}\mathbf{Z'y}.
+\]
+Como \(\mathbf{A}\) é invertível, verifique a identidade
+\[
+(\mathbf{A'BA})^{-1}\mathbf{A'B} = \mathbf{A}^{-1},
+\]
+pois multiplicando à direita por \(\mathbf{A}\) obtém-se a identidade. Logo
+\[
+\hat{\boldsymbol\beta}_{2SLS} = \mathbf{A}^{-1}\mathbf{Z'y} = (\mathbf{Z'X})^{-1}\mathbf{Z'y},
+\]
+que é exatamente o estimador de IV (formulado a partir da solução dos momentos \(\mathbf{Z'(y - X\beta)}=0\)). Portanto:
+
+\[
+\boxed{\;\text{se }L=K\text{ e }\mathbf{Z'X}\text{ é invertível, então }\hat\beta_{2SLS}=\hat\beta_{IV}=(\mathbf{Z'X})^{-1}\mathbf{Z'y}.\;}
+\]
+
+---
+
+## (b) Consistência de \(\hat\beta_{2SLS}\) (plim \(\hat\beta_{2SLS}=\beta\))
+
+Assuma as condições padrões de grande amostra:
+
+- Relevância: \(\operatorname{plim} \frac{1}{n}\mathbf{Z'X} = \mathbf{Q_{ZX}}\) tem posto \(K\).  
+- Exogeneidade dos instrumentos: \(\operatorname{plim} \frac{1}{n}\mathbf{Z}'\boldsymbol\varepsilon = \mathbf{0}\).  
+- \( \operatorname{plim} \frac{1}{n}\mathbf{Z'Z} = \mathbf{Q_{ZZ}}\) é positiva definida.
+
+Comece com a expressão do estimador:
+\[
+\hat{\boldsymbol\beta}_{2SLS} = (\mathbf{X'P_ZX})^{-1}\mathbf{X'P_Zy}
+= \bigg(\frac{1}{n}\mathbf{X'P_ZX}\bigg)^{-1}\bigg(\frac{1}{n}\mathbf{X'P_Zy}\bigg).
+\]
+Considere os limites plim (usando \( \mathbf{P_Z}=\mathbf{Z}(\mathbf{Z'Z})^{-1}\mathbf{Z'}\) e as leis da probabilidade):
+
+\[
+\operatorname{plim} \frac{1}{n}\mathbf{X'P_ZX}
+= \operatorname{plim} \frac{1}{n}\mathbf{X'Z}(\mathbf{Z'Z}/n)^{-1}\frac{1}{n}\mathbf{Z'X}
+= \mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}} \equiv \mathbf{M},
+\]
+onde \(\mathbf{Q_{XZ}}=\operatorname{plim}\mathbf{X'Z}/n = \mathbf{Q_{ZX}}'\). Note que \(\mathbf{M}\) é invertível por hipótese de relevância.
+
+Também
+\[
+\operatorname{plim} \frac{1}{n}\mathbf{X'P_Zy}
+= \operatorname{plim} \frac{1}{n}\mathbf{X'Z}(\mathbf{Z'Z}/n)^{-1}\frac{1}{n}\mathbf{Z'y}
+= \mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZY}}.
+\]
+Mas \(\mathbf{Q_{ZY}}=\operatorname{plim} \frac{1}{n}\mathbf{Z'y}=\operatorname{plim} \frac{1}{n}\mathbf{Z'(X\beta + \varepsilon)}=\mathbf{Q_{ZX}}\beta + 0\). Portanto
+\[
+\operatorname{plim} \frac{1}{n}\mathbf{X'P_Zy} = \mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}\beta = \mathbf{M}\beta.
+\]
+Agora tomando plim em \(\hat\beta_{2SLS}\):
+\[
+\operatorname{plim} \hat{\boldsymbol\beta}_{2SLS} = \mathbf{M}^{-1} \mathbf{M}\beta = \beta.
+\]
+
+Assim, sob as condições de relevância e exogeneidade dos instrumentos, \(\hat\beta_{2SLS}\xrightarrow{p}\beta\).
+
+---
+
+## (c) Distribuição assintótica de \(\sqrt{n}(\hat\beta_{2SLS}-\beta)\)
+
+Comece com a expansão:
+\[
+\sqrt{n}(\hat\beta_{2SLS}-\beta)
+= \Big(\frac{1}{n}\mathbf{X'P_ZX}\Big)^{-1}
+\Big(\frac{1}{\sqrt{n}}\mathbf{X'P_Z}\boldsymbol\varepsilon\Big).
+\]
+Usando as somas e limites já definidos, sob condições regulares
+\[
+\frac{1}{n}\mathbf{X'P_ZX} \xrightarrow{p} \mathbf{M} = \mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}.
+\]
+E observe que
+\[
+\frac{1}{\sqrt{n}}\mathbf{X'P_Z}\boldsymbol\varepsilon
+= \frac{1}{\sqrt{n}}\mathbf{X'Z}(\mathbf{Z'Z})^{-1}\mathbf{Z'}\boldsymbol\varepsilon.
+\]
+Pelo TCL multivariado, \(\frac{1}{\sqrt{n}}\mathbf{Z'}\boldsymbol\varepsilon \xrightarrow{d} N(\mathbf{0},\;\sigma^2\mathbf{Q_{ZZ}})\), portanto
+\[
+\frac{1}{\sqrt{n}}\mathbf{X'P_Z}\boldsymbol\varepsilon
+\xrightarrow{d} N\big(\mathbf{0},\; \sigma^2\mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}\big)
+= N(\mathbf{0},\;\sigma^2\mathbf{M}).
+\]
+Combining these pieces:
+\[
+\sqrt{n}(\hat\beta_{2SLS}-\beta)
+\xrightarrow{d} N\big(\mathbf{0},\; \sigma^2 \mathbf{M}^{-1}\mathbf{M}\mathbf{M}^{-1}\big)
+= N\big(\mathbf{0},\; \sigma^2 \mathbf{M}^{-1}\big).
+\]
+Recalling \(\mathbf{M}=\mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}\), we can write the asymptotic variance compactly as
+\[
+\boxed{\;
+\operatorname{AsyVar}\big(\sqrt{n}(\hat\beta_{2SLS}-\beta)\big)
+= \sigma^2\big(\mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}\big)^{-1}.
+\;}
+\]
+Em prática estima-se esta matriz por
+\[
+\widehat{\operatorname{AsyVar}}(\hat\beta_{2SLS})
+= \hat\sigma^2 \big(\mathbf{X'\hat P_Z X}/n\big)^{-1}
+\quad\text{ou}\quad
+\hat\sigma^2(\mathbf{X'P_ZX})^{-1}\quad(\text{com } \hat\sigma^2=\tfrac{\hat u'\hat u}{n-K}).
+\]
+
+---
+
+## (d) Comparação de eficiência assintótica: \(\hat\beta_{2SLS}\) vs \(\hat\beta_{OLS}\)
+
+**Assintótica de OLS (quando consistente).**  
+Se \(E(\boldsymbol\varepsilon\mid\mathbf{X})=0\) (exogeneidade plena), então o estimador OLS é consistente e assintoticamente normal com
+\[
+\sqrt{n}(\hat\beta_{OLS}-\beta)\xrightarrow{d} N\big(0,\; \sigma^2 \mathbf{Q_{XX}}^{-1}\big),
+\]
+onde \(\mathbf{Q_{XX}}=\operatorname{plim} \frac{1}{n}\mathbf{X'X}\).
+
+**Comparação das matrizes de variância.**  
+Mostraremos que, sob exogeneidade (ou seja, quando OLS é consistente), a matriz assintótica de OLS é menor ou igual (no sentido semidefinido positivo) à de 2SLS — isto é, OLS é assintoticamente mais eficiente.
+
+Note que pela propriedade de projeção:
+\[
+\mathbf{Q_{XX}} - \mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}
+= \operatorname{plim} \frac{1}{n}\mathbf{X'(I - P_Z)X}
+= \operatorname{plim} \frac{1}{n}\mathbf{X'M_Z X},
+\]
+onde \(\mathbf{M_Z}=I-P_Z\) é uma matriz de projeção (semidefinida positiva). Logo a matriz à esquerda é semidefinida positiva. Para matrizes semidefinidas positivas \(A\) e \(B\) com \(A-B\ge 0\), uma consequência é que \(B^{-1}-A^{-1}\ge 0\) (quando inversas existem) — isto implica
+\[
+\mathbf{Q_{XX}}^{-1} \preceq \big(\mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}\big)^{-1},
+\]
+ou seja
+\[
+\sigma^2 \mathbf{Q_{XX}}^{-1} \preceq \sigma^2 \big(\mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}\big)^{-1}.
+\]
+Em palavras: **a matriz de variância assintótica de OLS é menor (mais precisa) do que a de 2SLS** quando ambos são consistentes. Portanto, OLS é (assintoticamente) mais eficiente do que 2SLS sob a hipótese de exogeneidade.
+
+**Por que isso ocorre (intuição).**  
+OLS utiliza toda a variação em \(\mathbf{X}\) (incluindo a parte que, quando exógena, não é contaminada pelo erro) e, portanto, minimiza variância; 2SLS restringe a variação de \(\mathbf{X}\) à componente explicada por \(\mathbf{Z}\) (a componente puramente exógena), descartando a variação que poderia reduzir a variância do estimador caso essa variação fosse exógena. Assim, ao “proteger” contra viés (endogeneidade), o 2SLS normalmente perde eficiência relativa.  
+
+**Inconsistência de OLS em presença de endogeneidade.**  
+Se \(E(\boldsymbol\varepsilon\mid\mathbf{X})\neq 0\), então
+\[
+\operatorname{plim} \frac{1}{n}\mathbf{X'\varepsilon} \neq \mathbf{0},
+\]
+e por isso
+\[
+\operatorname{plim} \hat\beta_{OLS} = \mathbf{Q_{XX}}^{-1}\operatorname{plim}\frac{1}{n}\mathbf{X'y}
+= \beta + \mathbf{Q_{XX}}^{-1}\operatorname{plim}\frac{1}{n}\mathbf{X'\varepsilon} \neq \beta.
+\]
+Portanto OLS é inconsistente: qualquer vantagem de eficiência é irrelevante, pois o estimador não converge para o parâmetro estrutural desejado.
+
+**Resumo final.**  
+- Se \(E(\varepsilon\mid X)=0\): OLS é consistente e assintoticamente **mais eficiente** que 2SLS.  
+- Se há endogeneidade (violação acima): OLS é **inconsistente** (viesado), enquanto 2SLS (sob instrumentos válidos) é **consistente** — por isso 2SLS é preferível, apesar de sua maior variância assintótica.
+
+---
+
+### Referência rápida das fórmulas chave
+
+- 2SLS: \(\displaystyle \hat\beta_{2SLS} = (\mathbf{X'P_ZX})^{-1}\mathbf{X'P_Zy}.\)  
+- Caso \(L=K\): \(\displaystyle \hat\beta_{2SLS} = (\mathbf{Z'X})^{-1}\mathbf{Z'y} = \hat\beta_{IV}.\)  
+- Assintótica: \(\displaystyle \sqrt{n}(\hat\beta_{2SLS}-\beta)\xrightarrow{d} N\Big(0,\; \sigma^2(\mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}})^{-1}\Big).\)  
+- OLS assintótica (se válida): \(\displaystyle \operatorname{AsyVar}(\hat\beta_{OLS})=\sigma^2\mathbf{Q_{XX}}^{-1}\), com \(\mathbf{Q_{XX}}\succeq \mathbf{Q_{XZ}}\mathbf{Q_{ZZ}}^{-1}\mathbf{Q_{ZX}}\).
+
+# Questão 4
+
+(a) Substituindo a segunda equação na primeira (informalmente), vemos que \(y_{1i}\) contém \(u_{1i}\) e \(y_{2i}\) contém \(u_{2i}\). Se \(E[u_{1i}u_{2i}]\neq 0\), então \(Cov(y_{2i},u_{1i})\neq 0\) (porque \(y_{2i}\) contém \(u_{2i}\) que se correlaciona com \(u_{1i}\)). Logo \(y_{2i}\) é endógeno na primeira equação.
+
+*Primeiro estágio:* regresse o endógeno \(y_2\) sobre todos os instrumentos/exógenos (aqui \(x_1\) e \(x_2\), e o intercepto). No caso escalar:
+\[
+y_{2i} = \pi_0 + \pi_1 x_{1i} + \pi_2 x_{2i} + v_i.
+\]
+Obtenha \(\widehat{y}_{2i}\) (valores preditos).
+
+*Segundo estágio:* substitua \(y_{2i}\) por \(\widehat{y}_{2i}\) na primeira equação e estime por MQO:
+\[
+y_{1i} = \beta_0 + \beta_1 \widehat{y}_{2i} + \beta_2 x_{1i} + \text{error}.
+\]
+O coeficiente \(\hat\beta_1\) obtido é o estimador 2SLS para \(\beta_1\).
+
+*Forma matricial compacta:* supondo que \(\mathbf{X}=[\mathbf{y}_2\ \mathbf{x}_1]\) (\(n\times K\)) e \(\mathbf{Z}=[\mathbf{x}_1\ \mathbf{x}_2]\) (\(n\times L\)), o estimador 2SLS geral é
+\[
+\hat{\boldsymbol\beta}_{2SLS} = (\mathbf{X'P_ZX})^{-1}\mathbf{X'P_Zy},
+\]
+onde \(\mathbf{P_Z}=\mathbf{Z}(\mathbf{Z'Z})^{-1}\mathbf{Z'}\). No caso univariado para o endógeno, esta expressão reduz às fórmulas do primeiro e segundo estágios acima.
+
+(b) O teste de Hausman compara a diferença entre o estimador consistente sob \(H_1\) (aqui 2SLS, consistente mesmo se \(y_2\) é endógeno) e o estimador eficiente sob \(H_0\) (aqui OLS, eficiente se \(y_2\) é exógeno).
+
+Defina
+\[
+\mathbf{d} = \hat{\boldsymbol\beta}_{2SLS} - \hat{\boldsymbol\beta}_{OLS}.
+\]
+Uma forma prática da estatística de Hausman é a estatística Wald
+\[
+H = \mathbf{d}'\big[\widehat{\operatorname{var}}(\hat{\boldsymbol\beta}_{2SLS}) - \widehat{\operatorname{var}}(\hat{\boldsymbol\beta}_{OLS})\big]^{-1}\mathbf{d}.
+\]
+Sob \(H_0\) (exogeneidade de \(y_2\)), \(\operatorname{plim} \mathbf{d} = 0\) e, sob hipóteses regulares, \(H \xrightarrow{d} \chi^2_{K^*}\), onde \(K^*\) é o número de parâmetros potencialmente endógenos testados (a dimensão do subvetor correspondente — aqui \(K^*=1\) se apenas \(\beta_1\) for suspeito de endogeneidade).  
+Na prática, a matriz \(\widehat{\operatorname{var}}(\hat{\boldsymbol\beta}_{2SLS}) - \widehat{\operatorname{var}}(\hat{\boldsymbol\beta}_{OLS})\) deve ser estimada consistentemente; quando a diferença de variâncias não for invertível (caso comum se se usa estimadores com estimadores de variância aproximados), usa-se formas equivalentes (ver Hausman 1978) ou se calcula via regressão auxiliar (Wu/Durbin approach).
+
+*Observação prática (forma alternativa — Durbin–Wu–Hausman):*  
+Uma implementação comum evita a inversão difícil calculando uma regressão auxiliar: estime OLS e depois regresse \(y_{2}\) sobre \(\mathbf{Z}\) para obter \(\widehat{v}_i = y_{2i} - \widehat{y}_{2i}\); inclua \(\widehat{v}_i\) como regressor adicional na primeira-equação (augmented regression)
+\[
+y_{1i} = \beta_0 + \beta_1 y_{2i} + \beta_2 x_{1i} + \rho \widehat{v}_i + e_i,
+\]
+e teste \(H_0: \rho=0\) por um teste-t ou um teste-F conjunto (se houver vários endógenos). Rejeitar \(\rho=0\) indica endogeneidade.
+
+**(b) Interpretação dos resultados e limitações.**  
+
+- **Se não rejeitamos \(H_0\) (Hausman):** não há evidência estatística de que \(y_2\) é endógeno; OLS e 2SLS são, sob \(H_0\), ambos consistentes, e OLS é preferível por ser (assintoticamente) mais eficiente. Em termos práticos, o pesquisador pode optar por OLS (desde que outros pressupostos sejam plausíveis).
+
+- **Se rejeitamos \(H_0\):** existe evidência de que \(y_2\) é endógeno; OLS é inconsistene e 2SLS (ou outro estimador IV) deve ser usado para obter inferência consistente.
+
+**Limitações práticas:**
+
+1. **Instrumentos fracos:** se \(x_2\) for um instrumento fraco para \(y_2\) (primeiro estágio com \(F<10\) na regressão de \(y_2\) sobre \(\mathbf{Z}\)), então \(\hat\beta_{2SLS}\) pode ser impreciso e o teste de Hausman pode ter tamanho distorcido — ou seja, o teste pode rejeitar ou não rejeitar indevidamente. Em casos de instrumentos fracos, recomenda-se usar métodos robustos (por exemplo, testes robustos a instrumentos fracos, inferência baseada em IV robusta como métodos de Anderson–Rubin, ou procurar melhores instrumentos).
+
+2. **Apenas um instrumento disponível / identificação exata:** se há apenas um instrumento (just-identified), a diferença entre OLS e 2SLS pode ser pequena, e a matriz de diferença de variâncias pode ser singulare ou instável; o teste é menos informativo. Além disso, quando os instrumentos são exatamente identificados, não há teste de sobreidentificação que avalie exogeneidade adicional dos instrumentos.
+
+3. **Erro de especificação e correlações na estrutura de erros:** correlações entre erros ou heterocedasticidade devem ser tratadas ao estimar as matrizes de variância (usar estimadores robustos de variância). Caso contrário, as estatísticas de teste podem ter distribuição diferente da assumida.
+

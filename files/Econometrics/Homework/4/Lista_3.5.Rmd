@@ -1,0 +1,54 @@
+---
+title: "Econometria I"
+author: "Lista de Exercícios 3 1/2"
+affiliation: PIMES/UFPE
+abstract:
+thanks:
+keywords:
+date: "PIMES/UFPE"
+output:
+  pdf_document:
+    highlight: default
+    #citation_package:
+    keep_tex: false
+    #fig_caption: true
+    latex_engine: pdflatex
+fontsize: 11pt
+geometry: margin=1in
+#bibliography:
+#biblio-style:
+header-includes:
+- \usepackage{indentfirst}
+- \usepackage{graphicx}
+- \usepackage{geometry}
+- \usepackage{subfigure}
+- \usepackage{amsmath}
+- \usepackage{listings}
+- \usepackage{tikz}
+- \usetikzlibrary{matrix}
+---
+
+\vspace{0.25in}
+
+
+
+
+# Problemas conceituais
+
+
+1. Quais são os pressupostos chaves do estimador de variáveis instrumentais?
+
+2. Prove que o estimador de 2SLS é **viesado** e **consistente**.
+
+3. Derive a formula do estimador de variável instrumental quando o numero de instrumentos é igual ao número de variáveis endógenas. 
+
+4. Considere o modelo $$\begin{split} y_{1i} = & \beta y_{2i} + \varepsilon_{1i} \\
+y_{2i} = & \alpha x_{i} + \varepsilon_{2i}\end{split}$$ onde $$\mathbf{\varepsilon}_i=\begin{bmatrix} \varepsilon_{1i} \\
+\varepsilon_{2i}\end{bmatrix}\sim iid \text{ } N \left(\begin{bmatrix} 0 \\
+0 \end{bmatrix},\begin{bmatrix} \sigma_{11} & \sigma_{12} \\
+\sigma_{12} & \sigma_{22} \end{bmatrix}\right),$$ $y_{1i}$ e $y_{2i}$ são as variáveis dependentes (univariadas) e $x_i$ é uma variável aleatória exógena (univariada). A amostra contém $n$ observações de $(y_{1i}, y_{2i}, x_i)$.
+    a. Derive o estimador de OLS de $\beta$. Analise a consistência desse estimador.
+    b. Se não for consistente, você pode impor algumas restrições nos parâmetros do modelo para recuperar consistência? Interprete e discuta seu resultado.
+    c. Derive o estimador de OLS de $\alpha$. Analise a consistência desse estimador.
+    d. Se não for consistente, você pode impor algumas restrições nos parâmetros do modelo para recuperar consistência? Interprete e discuta seu resultado.
+    e. Derive o estimador IV de $\beta$ usando $x$ como instrumento e estude sua consistência. Qual estimador de $\beta$ deve ser usado? Interprete e discuta sua resultado.

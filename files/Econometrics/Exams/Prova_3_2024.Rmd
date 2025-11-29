@@ -1,0 +1,75 @@
+---
+title: "Econometria I"
+author: "Exame 3"
+affiliation: 
+abstract:
+thanks:
+keywords:
+date: 09/12/2024
+output:
+  pdf_document:
+    highlight: default
+    #citation_package:
+    keep_tex: false
+    #fig_caption: true
+    latex_engine: pdflatex
+fontsize: 11pt
+geometry: margin=1in
+#bibliography:
+#biblio-style:
+header-includes:
+- \usepackage{indentfirst}
+- \usepackage{graphicx}
+- \usepackage{geometry}
+- \usepackage{subfigure}
+- \usepackage{amsmath}
+- \usepackage{listings}
+- \usepackage{tikz}
+- \usetikzlibrary{matrix}
+---
+
+
+Instruções:
+
+- Você precisa justificar suas respostas com cuidado e mostrar seu trabalho para obter o crédito total. Crédito parcial pode ser dado para cada pergunta.
+- Caso o tempo se esgote ou não consiga completar a argumentação/prova formal, crédito parcial poderá ser dado para uma resposta intuitiva.
+- Salvo indicação em contrário, podem ser utilizados pressupostos padrão vistos em sala de aula. Indique claramente as suposições que você está usando para resolver cada exercício.
+- Cada item dentro de cada questāo vale 1 ponto, enquanto que a última questāo vale 2 pontos.
+
+\vspace{0.25in}
+
+1. Considere o modelo de regressão linear múltipla: $$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \cdots+\beta_kx_{ik}+\varepsilon_i,$$ $i=1,\cdots,n$. A matriz de covariância $\Sigma$ é dada por: $$\Sigma = \begin{bmatrix} \sigma_1^2 & 0 & \cdots & 0 \\ 0 & \sigma_2^2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \sigma_n^2 \end{bmatrix}$$ onde a variância do erro para a observação $i$, $\sigma_i^2$, é dada por $\lambda_i\sigma^2$, onde $\lambda_i$ é uma constante conhecida.
+    a. Derive o estimador de mínimos quadrados generalizados (GLS) para o modelo acima.
+    b. Compare os estimadores de OLS ($\mathbf{b}_{OLS}$) e GLS ($\mathbf{b}_{GLS}$) em termos de eficiência e consistência.
+    c. Considerando agora uma estrutura desconhecida para a matriz de covariância de $\varepsilon$, derive uma forma de construir a matriz de covariância de $\mathbf{b}_{OLS}$ que seja robusta à estrutura heteroscedástica de $\varepsilon$.
+    d. Descreva um teste formal para a presença de heteroscedasticidade no modelo de regressão. Esboce os passos para conduzir o teste e interprete os resultados.
+    
+\vspace{0.25in}
+
+
+2. Suponha que tenhamos uma amostra de $C$ grupos de observações e denote cada grupo por $c=1, \ldots, C$. Existem $N_c$ observações em cada grupo (ou *cluster*) $c$, onde $c\geq1$ e $\sum_c{N_c}=n$. O modelo de regressão, portanto é dado por $$y_{i,c}=\mathbf{x}_{i,c}'\mathbf{\beta}+\varepsilon_{i,c}.$$ Assumindo que  observações em um *cluster* são correlacionadas mas os *clusters* são independentes entre si, responda as questões a seguir. 
+
+  a. Encontre a matriz de covariância (populacional) robusta à autocorrelação entre observações dentro dos *clusters*.
+  b. Proponha um estimador viável para a matriz de covariância definida acima.
+
+\vspace{0.25in}
+
+3. Considere o modelo de dados em painel $$ y_{it} = \mathbf{x}_{it}'\beta+c_i+\varepsilon_{it},$$ onde existem $K$ regressores em $\mathbf{x}_{it}$, sem o intercepto. O termo $c_i$ captura a heterogeneidade individual não-observada, conforme visto em sala de aula.
+
+
+    a. Mostre que o estimador de OLS é ineficiente neste caso.
+    b. Derive o estimador de mínimos quadrados para o modelo LSDV (Least Squares Dummy Variable), considerando a formulação matricial $$\mathbf{y} = \mathbf{D}\pmb{\alpha} + \mathbf{X}\pmb{\beta } +\pmb{\varepsilon},$$ onde $\mathbf{D}$ é a matriz de dummies e $\mathbf{X}$ contém os regressores. Mostre como o uso do Teorema de Frisch-Waugh-Lovell (FWL) simplifica a estimação de $\pmb{\beta}$.
+    c. Mostre que o estimador LSDV é algebraicamente equivalente ao estimador *within* para o coeficiente $\pmb{\beta}$. Explique como isso reduz o custo computacional da estimação no modelo LSDV.
+    d. Suponha que os efeitos individuais não possuem correlação com os regressores. Descreva a matriz de variância populacional do termo de erro $\pmb{\Omega}$ e proponha um estimador **viável** e eficiente para este modelo. (Dica: O termo de erro neste caso é dado por $\eta_{it}=u_i + \varepsilon_{it}$, onde $u_i$ e $\varepsilon_{it}$ possuem variâncias constantes, denotadas por $\sigma_u^2$ e $\sigma_\varepsilon^2$, respectivamente, e são não-autocorrelacionados).
+     
+\vspace{0.25in}
+    
+4. O governo de um país implementou, em 2020, uma nova política de aumento do salário mínimo em determinadas regiões. As regiões elegíveis para a política (grupo tratado) foram aquelas em que a renda média dos trabalhadores estava abaixo de um certo patamar. As demais regiões (grupo de controle) não sofreram alterações no salário mínimo.
+
+    Você tem acesso a um painel de dados de 2016 a 2023 com informações sobre renda e características socioeconômicas dos trabalhadores em todas as regiões. Sua tarefa é avaliar o impacto da política no nível de renda dos trabalhadores, utilizando a metodologia de diferenças em diferenças (Diff-in-Diff).
+
+    a. Especifique o modelo econométrico Diff-in-Diff que você utilizaria para avaliar o impacto da política, indicando claramente as variáveis que devem ser incluídas e suas respectivas funções no modelo.
+    b. Explique o significado do coeficiente que captura o efeito causal do programa em sua especificação acima. Como interpretar este coeficiente no contexto da análise?
+    c. Quais são as principais suposições para a validade do estimador Diff-in-Diff? Explique como você verificaria empiricamente se estas suposições são plausíveis neste contexto.
+    d. Discuta potenciais ameaças à validade da identificação neste contexto. Quais estratégias poderiam ser utilizadas para mitigar estes problemas?
+    

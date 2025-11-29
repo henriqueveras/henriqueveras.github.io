@@ -50,13 +50,13 @@ header-includes:
     d. Homocesdasticidade e não-autocorelação
 
 
-    e. Distribuiçao normal
+    e. Distribuição normal
 
 
 2. Encontre matricialmente o estimador de mínimos quadrados (MQO) da regressão $$\mathbf{y}=\mathbf{X}\mathbf{\beta}+\mathbf{\varepsilon}$$.
 
 
-3. Abaixo defninimos o modelo de regresão simples como $$y_i=\alpha + \beta x_i + \varepsilon_i$$
+3. Abaixo defninimos o modelo de regressão simples como $$y_i=\alpha + \beta x_i + \varepsilon_i$$
 
 
     a. Mostre que este modelo pode ser escrito equivalentemente em forma matricial como             $\mathbf{y}=\mathbf{X}\mathbf{\beta}+\mathbf{\varepsilon}$.
@@ -78,7 +78,15 @@ para calcular os coeficientes de regressão em $\mathbf{X}$, podemos primeiro tr
 6. Considere o modelo $\mathbf{y}=\mathbf{X}\mathbf{b}+\mathbf{e}$ A partir das definições $SST=\sum_{i=1}^n{(y_i-\bar{y})^2}$, $SSR=\sum_{i=1}^n{(\hat{y}_i-\bar{y})^2}$ e $SSE=\mathbf{e}'\mathbf{e}=\sum_{i=1}^n{e_i^2}$, responda as seguintes questões:
 
     a. Prove que $SST=SSR+SSE$. 
-    b. Suponha que a variável $z$ é adicionada ao modelo. Mostre como podemos comparar o $R^2$ da primeira regresão com o da segunda.
+    b. Suponha que a variável $z$ é adicionada ao modelo. Mostre como podemos comparar o $R^2$ da primeira regressão com o da segunda.
+    
+
+7. Considere os seguintes modelos: $$\begin{split} y_i & = \beta_1 x_{1,i} + \beta_2 x_{2,i} + \beta_3 x_{3,i}+\varepsilon_i \\
+y_i & = \alpha_1 z_{1,i} + \alpha_2 z_{2,i} + \alpha_3 z_{3,i}+u_i\end{split}$$  onde $z_{1,i}=x_{1,i}-2x_{2,i}$, $z_{2,i}=x_{2,i}+4x_{3,i}$, $z_{3,i}=2x_{1,i}-3x_{2,i}+5x_{3,i}$. Seja $\mathbf{X}=[\mathbf{x}_1,\mathbf{x}_2,\mathbf{x}_3]$, onde $\mathbf{x}_k=[x_{k,1},x_{k,2},\cdots,x_{k,n}]'$ (um vetor coluna) e $\mathbf{Z}=[\mathbf{z}_1,\mathbf{z}_2,\mathbf{z}_3]$, onde $\mathbf{z}_k=[z_{k,1},z_{k,2},\cdots,z_{k,n}]'$.
+
+    a. Encontre os elementos da matrix $3\times3$ $\mathbf{A}$ tal que $\mathbf{Z}=\mathbf{XA}$.
+    b. Qual a relação entre o estimador $b_1$ e os estimadores $\hat{\alpha}_1$, $\hat{\alpha}_2$ e $\hat{\alpha}_3$?
+    c. Mostre que as duas regressões fornecem os mesmos valores previstos e resíduos. Forneça alguma intuição para este resultado.
     
     
 # Problemas práticos

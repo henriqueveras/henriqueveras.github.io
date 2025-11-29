@@ -143,7 +143,7 @@ A test procedure is **consistent** if its power goes to 1 as the sample size goe
 
 The general linear hypothesis is a set of $J$ restrictions on the linear regression model
 
-$$y=\mathbf{X\beta}+\varepsilon$$
+$$\mathbf{y}=\mathbf{X}\pmb{\beta}+\pmb{\varepsilon}$$
 
 \vfill
 
@@ -159,7 +159,7 @@ $$r_{J1}\beta_1 + r_{J2}\beta_2 + \cdots + r_{JK}\beta_K=q_J$$
 
 In matrix form:
 
-$$\mathbf{R\beta}=\mathbf{q}$$
+$$\mathbf{R}\pmb{\beta}=\mathbf{q}$$
 
 \vfill
 
@@ -233,8 +233,8 @@ It must be that the mean value $\beta_k^0$ is not the one hypothesized.
 
 We now consider testing a set of $J$ linear restrictions
 
-$$H_0:\mathbf{R\beta}-\mathbf{q}=\mathbf{0}$$
-$$H_1:\mathbf{R\beta}-\mathbf{q}\neq\mathbf{0}$$ 
+$$H_0:\mathbf{R}\pmb{\beta}-\mathbf{q}=\mathbf{0}$$
+$$H_1:\mathbf{R}\pmb{\beta}-\mathbf{q}\neq\mathbf{0}$$ 
 
 Given the LS estimator $\mathbf{b}$, we are interested in the **discrepancy vector** $\mathbf{Rb}-\mathbf{q}=\mathbf{m}$.
 
@@ -252,8 +252,8 @@ Notice that $\mathbf{m}$ is normally distributed, since it is a linear combinati
 
 Let's find $\mathbf{m}$'s expected value and variance:
 
-$$\begin{split} E[\mathbf{m}|\mathbf{X}] & =\mathbf{R}E[\mathbf{\beta}|\mathbf{X}]-\mathbf{q}=0 \\
-Var[\mathbf{m}|\mathbf{X}] & =\mathbf{R}Var[\mathbf{\beta}|\mathbf{X}]\mathbf{R}'=\mathbf{R}\sigma^2(\mathbf{X'X})^{-1}\mathbf{R}'\end{split}$$
+$$\begin{split} E[\mathbf{m}|\mathbf{X}] & =\mathbf{R}E[\pmb{\beta}|\mathbf{X}]-\mathbf{q}=0 \\
+Var[\mathbf{m}|\mathbf{X}] & =\mathbf{R}Var[\pmb{\beta}|\mathbf{X}]\mathbf{R}'=\mathbf{R}\sigma^2(\mathbf{X'X})^{-1}\mathbf{R}'\end{split}$$
 
 \vfill
 
@@ -298,7 +298,7 @@ $$F(1, n-K)=\frac{(b_j-q)^2}{Est.Var(b_j)}$$
 ### The F Statistic
 
 
-Consider an alternative approach: find the sample estimate of $\mathbf{r'\beta}$
+Consider an alternative approach: find the sample estimate of $\mathbf{r'}\pmb{\beta}$
 
 $$r_1 b_1 + r_2b_2 + \cdots + r_Kb_K=\mathbf{r'b}=\hat{q}$$
 
@@ -461,7 +461,7 @@ $$\mathbf{\lambda}_*=[\mathbf{R}(\mathbf{X'X})^{-1}\mathbf{R}']^{-1}(\mathbf{Rb}
 
 \vfill
 
-Lagrange multiplier tests rely on the idea that testing whether $\lambda_*=0$ should be equivalent to testing $\mathbf{R\beta}-\mathbf{q}=\mathbf{0}$ (why?)
+Lagrange multiplier tests rely on the idea that testing whether $\lambda_*=0$ should be equivalent to testing $\mathbf{R}\pmb{\beta}-\mathbf{q}=\mathbf{0}$ (why?)
 
 \vfill
 
@@ -556,147 +556,32 @@ This expression is $1/J$ multiplied by a Wald statistic, based on the asymptotic
 
 Suppose now we are interested in testing a hypothesis that involves a nonlinear function of the regression coefficients:
 
-$$H_0: c(\mathbf{\beta})=\mathbf{q}$$
+$$H_0: c(\pmb{\beta})=\mathbf{q}$$
 
 The test statistic is
 
-$$z=\frac{c(\hat{\mathbf{\beta}})-q}{\text{estimated st. error}}$$
+$$z=\frac{c(\hat{\pmb{\beta}})-q}{\text{estimated st. error}}$$
 
 \vfill
 
 The numerator can be easily obtained. To find the estimated variance, however, we rely on a Taylor series approximation around the true parameter $\beta$:
 
-$$c(\hat{\beta})\approx c(\beta)+\left(\frac{\partial c(\beta)}{\partial \beta}\right)'(\hat{\beta}-\beta)$$
+$$c(\hat{\pmb{\beta}})\approx c(\pmb{\beta})+\left(\frac{\partial c(\pmb{\beta})}{\partial \pmb{\beta}}\right)'(\hat{\pmb{\beta}}-\pmb{\beta})$$
 
 Thus, 
 
-$$Var[c(\hat{\beta})]\approx\left(\frac{\partial c(\beta)}{\partial \beta}\right)'Asy.Var[\hat{\beta}]\left(\frac{\partial c(\beta)}{\partial \beta}\right)$$.
+$$Var[c(\hat{\pmb{\beta}})]\approx\left(\frac{\partial c(\pmb{\beta})}{\partial \pmb{\beta}}\right)'Asy.Var[\hat{\pmb{\beta}}]\left(\frac{\partial c(\pmb{\beta})}{\partial \pmb{\beta}}\right)$$.
 
 \vfill
 
 ### Testing Nonlinear Restrictions
 
-We use $\mathbf{b}$ as an estimator of $\beta$ and estimate $c(\mathbf{\beta})$ with $c(\mathbf{b})$.
+We use $\mathbf{b}$ as an estimator of $\pmb{\beta}$ and estimate $c(\pmb{\beta})$ with $c(\mathbf{b})$.
 
 \vfill
 
-According to the Slutsky theorem, if $\text{plim }b=\beta$, then $\text{plim }c(b)=c(\beta)$.
+According to the Slutsky theorem, if $\text{plim }b=\pmb{\beta}$, then $\text{plim }c(b)=c(\pmb{\beta})$.
 
-## Choosing Between Nonnested Models
-
-Suppose that, for example, we are now interested in testing whether a linear or a log-linear model is appropriate, or determining which of two possible sets of regressors is more appropriate.
-
-\vfill
-
-We are interested in comparing two competing linear models:
-
-$$H_0: \mathbf{y}=\mathbf{X\beta}+\mathbf{\varepsilon}_1$$
-
-$$H_1: \mathbf{y}=\mathbf{Z\gamma}+\mathbf{\varepsilon}_2$$
-
-Notice how the models are nonnested. In this case, how do we perform a test? Is the usual size of the test in this case useful?
-
-\vfill
-
-### An Encompassing Model
-
-We say Model 0 *encompasses* Model 1 if the features of Model 1 can be explained by model 0, but the reverse is not true.
-
-\vfill
-
-Let $\bar{\mathbf{X}}$ denote the set of variables in $\mathbf{X}$ that are not in $\mathbf{Z}$ and define $\bar{\mathbf{Z}}$ likewise with respect to $\mathbf{X}$.
-
-\vfill
-
-Moreover, let $\mathbf{W}$ be the set of variables that the models have in common.
-
-\vfill
-
-Then, $H_0$ and $H_1$ can be combined in a supermodel:
-
-$$\mathbf{y}= \bar{\mathbf{X}}\bar{\mathbf{\beta}} + \bar{\mathbf{Z}}\bar{\mathbf{\gamma}}+ \mathbf{W}\mathbf{\delta}+ \mathbf{\varepsilon}$$
-
-\vfill
-
-
-### An Encompassing Model
-
-$H_0$ can be rejected if it is found that $\bar{\mathbf{\beta}}=0$ and $H_1$ likewise for $\bar{\mathbf{\gamma}}=0$.
-
-\vfill
-
-This test can be performed applying a conventional $F$ test.
-
-\vfill
-
-Problems with this approach:
-
-  1. We cannot test whether $\mathbf{\beta}$ or $\mathbf{\gamma}$ are zero. why?
-  2. This compound model can have an extremely large set of regressors.
-
-\vfill
-
-### An Alternative Approach
-
-Suppose $H_0$ is correct. Then, we can estimate $\mathbf{\gamma}$ by regressing $\mathbf{y}$ on $\mathbf{Z}$, which yields an estimator vector, say, $\mathbf{c}$.
-
-\vfill
-
-If we regress $\mathbf{X\beta}$ on $\mathbf{Z}$, we should find the exact same coefficients, say $\mathbf{c}_0$ (assuming $\mathbf{\varepsilon}$'s are random noises). Why?
-
-\vfill
-
-A test for the proposition that Model 0 encompasses Model 1 is whether $E[\mathbf{c}-\mathbf{c}_0]=0$
-
-\vfill
-
-### Comprehensive Approach -- The J Test
-
-The $J$ test, proposed by Davidson and MacKinnon (1981) suggests an alternative:
-
-$$\mathbf{y}=(1-\lambda)\mathbf{X\beta}+\lambda\mathbf{Z\gamma}+\mathbf{\varepsilon}$$
-
-\vfill
-
-A test of $\lambda=0$ would be against $H_1$. However, this cannot be separately estimated.
-
-\vfill
-
-The $J$ test consists of estimating $\mathbf{\gamma}$ by LS regression of $\mathbf{y}$ on $\mathbf{Z}$ followed by a LS regression of $\mathbf{y}$ on $\mathbf{X}$ and $\mathbf{Z\gamma}$
-
-\vfill
-
-Asymptotically, $\hat{\lambda}/se(\hat{\lambda})$ is distributed as standard normal.
-
-## A Specification Test
-
-Finally, the idea now is to consider a particular null model and alternatives that are not explicitly given in the form of restrictions on the regression equation.
-
-\vfill
-
-Ramsey's (1967) RESET test:
-
-$$\begin{split} H_0: \mathbf{y}= & \mathbf{X\beta}+\mathbf{\varepsilon} \\
-H_1: \mathbf{y}= & \mathbf{X\beta}+ \text{higher order powers of } x_k \text{ and other terms}+\mathbf{\varepsilon} \end{split}$$
-
-\vfill
-
-Approach: add second- and third-order powers of $x_k$ and cross-products of the regressors in $H_1$.
-
-\vfill
-
-Issue: With a large number of regressors, these additional terms might increase the number of estimated parameters at large rates.
-
-\vfill
-
-### A Specification Test
-
-Solution: use LS predictions
-
-  1. Fit the null model
-  2. Include higher order and other terms
-  
-\vfill
 
 ## Structural Break and Parameter Variation
 
@@ -734,12 +619,12 @@ $$\begin{bmatrix}
     \mathbf{0} & \mathbf{X}_2 \\
     \end{bmatrix}
     \begin{bmatrix}
-    \mathbf{\beta}_1 \\
-        \mathbf{\beta}_2 \\
+    \mathbf{\pmb{\beta}}_1 \\
+        \mathbf{\pmb{\beta}}_2 \\
     \end{bmatrix}+
     \begin{bmatrix}
-    \mathbf{\varepsilon}_1 \\
-    \mathbf{\varepsilon}_2 \\
+    \mathbf{\pmb{\varepsilon}}_1 \\
+    \mathbf{\pmb{\varepsilon}}_2 \\
     \end{bmatrix}$$
 
 ### The Unrestricted Least Squares
@@ -774,7 +659,7 @@ The restricted coefficient vector can be obtained by imposing a constraint on th
 
 \vfill
 
-Formally, we can write the restriction $\mathbf{\beta}_1=\mathbf{\beta}_2$ in the format $\mathbf{R\beta}=\mathbf{q}$, with $\mathbf{R}=[\mathbf{I}:-\mathbf{I}]$ and $\mathbf{q}=\mathbf{0}$.
+Formally, we can write the restriction $\mathbf{\pmb{\beta}}_1=\mathbf{\pmb{\beta}}_2$ in the format $\mathbf{R\pmb{\beta}}=\mathbf{q}$, with $\mathbf{R}=[\mathbf{I}:-\mathbf{I}]$ and $\mathbf{q}=\mathbf{0}$.
 
 \vfill
 
@@ -787,10 +672,10 @@ $$\begin{bmatrix}
     \begin{bmatrix}
     \mathbf{X}_1 \\
     \mathbf{X}_2 \\
-    \end{bmatrix}\mathbf{\beta}+
+    \end{bmatrix}\mathbf{\pmb{\beta}}+
     \begin{bmatrix}
-    \mathbf{\varepsilon}_1 \\
-    \mathbf{\varepsilon}_2 \\
+    \mathbf{\pmb{\varepsilon}}_1 \\
+    \mathbf{\pmb{\varepsilon}}_2 \\
     \end{bmatrix}$$
     
 

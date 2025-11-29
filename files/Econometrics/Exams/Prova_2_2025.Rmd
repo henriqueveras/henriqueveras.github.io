@@ -1,0 +1,111 @@
+---
+title: "Econometria I — Exame 2"
+author: ""
+date: "30/10/2025"
+output:
+  pdf_document:
+    highlight: default
+    keep_tex: false
+fontsize: 11pt
+geometry: margin=1in
+header-includes:
+- \usepackage{amsmath}
+- \usepackage{indentfirst}
+---
+
+Instruções:
+
+- Você precisa justificar suas respostas com cuidado e mostrar seu trabalho para obter o crédito total. Crédito parcial pode ser dado para cada pergunta.
+- Caso o tempo se esgote ou não consiga completar a argumentação/prova formal, crédito parcial poderá ser dado para uma resposta intuitiva.
+- Salvo indicação em contrário, podem ser utilizados pressupostos padrão do modelo linear. Indique claramente as suposições que você está usando para resolver cada exercício.
+- Cada item dentro de cada questāo vale 1 ponto, enquanto que a última questāo vale 2 pontos.
+
+\vspace{0.25in}
+
+# Questão 1
+
+Considere o modelo de regressão linear clássico:
+\[
+y = X_1\beta_1 + X_2\beta_2 + \varepsilon,
+\]
+onde \(X_1\) tem dimensão \(n \times K_1\), \(X_2\) tem dimensão \(n \times K_2\), e \(E(\varepsilon|X)=0\).
+
+Deseja-se testar a hipótese de que as variáveis em \(X_2\) não têm efeito sobre \(y\):
+\[
+H_0: \beta_2 = 0.
+\]
+
+(a) Escreva o estimador restrito \(\tilde\beta\) de MQO sob \(H_0\).
+
+(b) Encontre uma estatística de teste viável para o teste de hipótese descrito acima. Seja claro na notação e pressupostos utilizados.
+
+# Questão 2
+
+Considere o modelo
+\[
+y_i = \alpha + \beta_1 x_{1i} + \beta_2 x_{2i} + \varepsilon_i,
+\]
+onde as variáveis \(x_{1i}\) e \(x_{2i}\) estão medidas em níveis originais.  
+Defina as versões centradas:
+\[
+\tilde{x}_{1i} = x_{1i} - \bar{x}_1, \qquad \tilde{x}_{2i} = x_{2i} - \bar{x}_2.
+\]
+
+Deseja-se testar se a soma dos efeitos marginais médios de \(x_1\) e \(x_2\) é nula, isto é:
+\[
+H_0:\; \beta_1 \bar{x}_1 + \beta_2 \bar{x}_2 = 0.
+\]
+
+(a) Reescreva \(H_0\) na forma matricial \(R\beta = q\), explicitando \(R\) e \(q\).
+
+(b) Derive a expressão da estatística de Wald correspondente em termos de \(\hat\beta\) e \(\widehat{\operatorname{Var}}(\hat\beta)\).
+
+# Questão 3
+
+Considere o modelo
+\[
+\mathbf{y} = \mathbf{X}\pmb{\beta} + \pmb{\varepsilon}, \qquad
+E(\pmb{\varepsilon}|\mathbf{Z}) = 0,
+\]
+onde \(\mathbf{X}\) é uma matriz \(n\times K\) de regressores endógenos e \(\mathbf{Z}\) é uma matriz \(n\times L\) de instrumentos, com \(L\geq K\).
+
+(a) Derive o estimador de dois estágios (2SLS) e mostre que ele é equivalente ao estimador de variáveis instrumentais quando $L=K$.
+
+(b) Mostre que, sob relevância e exogeneidade dos instrumentos, \(\hat\beta_{2SLS}\xrightarrow{p}\beta\).
+
+(c) Derive a distribuição assintótica de \(\sqrt{n}(\hat\beta_{2SLS}-\beta)\).
+
+(d) Compare a eficiência assintótica de \(\hat\beta_{2SLS}\) e \(\hat\beta_{OLS}\). Explique por que OLS é mais eficiente sob \(E(\varepsilon|X)=0\), mas inconsistente quando há endogeneidade.
+
+
+# Questão 4
+
+Considere o sistema simultâneo
+\[
+\begin{cases}
+y_{1i} = \beta_0 + \beta_1 y_{2i} + \beta_2 x_{1i} + u_{1i},\\[4pt]
+y_{2i} = \gamma_0 + \gamma_1 y_{1i} + \gamma_2 x_{2i} + u_{2i},
+\end{cases}
+\]
+para \(i=1,\dots,n\). Suponha que \(x_{1i}\) e \(x_{2i}\) são exógenas (não correlacionadas com \(u_{1i},u_{2i}\)) e que \(E[u_{1i},u_{2i}] \neq 0\). Considere que apenas a primeira equação será estimada pelo pesquisador (portanto \(y_2\) é potencialmente endógeno na primeira equação).
+
+ 
+(a) Mostre que \(y_{2i}\) é endógeno na primeira equação e apresente o estimador 2SLS para \(\beta_1\) (forma em dois estágios), mostrando a expressão matricial compacta do 2SLS.
+
+(b) Derive a estatística de Hausman para testar a exogeneidade de \(y_{2i}\) na primeira equação, apresentando-a em forma matricial utilizável em amostra (isto é, em termos de \(\hat\beta_{OLS}\), \(\hat\beta_{2SLS}\) e estimadores de suas matrizes de variância). Indique os graus de liberdade do teste e interprete os possíveis resultados do teste no contexto de simultaneidade parcial (por exemplo: se rejeitamos \(H_0\), quais implicações para a escolha entre OLS e 2SLS? E se não rejeitamos?). Discuta rapidamente limitações práticas do teste quando os instrumentos são fracos ou quando há apenas um instrumento disponível.
+
+
+
+# Questão 5
+
+O artigo *“Direct versus Indirect Colonial Rule in India: Long-term Consequences”* de Lakshmi Iyer (2010, *Review of Economics and Statistics*) investiga os efeitos de longo prazo das diferentes formas de dominação britânica na Índia — governo direto (administrado pela Coroa britânica) e governo indireto (administrado por príncipes locais sob supervisão britânica).
+
+Durante o domínio colonial, cerca de 40% do território indiano foi governado indiretamente, por meio dos chamados *princely states*, enquanto o restante era governado diretamente como parte da *British India*. Essa diferença institucional criou dois sistemas distintos de administração, tributação e prestação de serviços públicos, cuja persistência institucional poderia gerar efeitos duradouros sobre o desenvolvimento econômico e social.
+
+O objetivo central de Iyer é avaliar se as áreas historicamente governadas de forma indireta apresentam hoje piores indicadores de desenvolvimento, como educação, saúde e infraestrutura. A autora encontra que regiões sob administração indireta têm, em média, piores resultados contemporâneos, mesmo após controlar por fatores geográficos e históricos.
+
+No entanto, a escolha histórica entre administração direta e indireta não foi aleatória: os britânicos poderiam ter decidido manter o governo direto em regiões economicamente mais estratégicas ou politicamente instáveis, o que geraria endogeneidade na variável de interesse (\(Indirect_i\)). Para lidar com esse problema, Iyer utiliza uma estratégia de variável instrumental (IV) baseada na Doutrina do Lapso (Doctrine of Lapse).
+
+A Doutrina do Lapso, introduzida pelo governador-geral Lord Dalhousie no século XIX, determinava que qualquer estado principesco cujo governante morresse sem herdeiro masculino seria automaticamente anexado e passaria a ser administrado diretamente pela Coroa britânica. Essa política foi aplicada de forma relativamente rígida até meados de 1858 e produziu variação exógena na probabilidade de que uma região fosse governada diretamente. Assim, o instrumento utilizado é uma dummy indicando se o território estava sujeito à Doutrina do Lapso.
+
+Discorra sobre estimação empírica em uma abordagem de variáveis instrumentais. Em sua resposta, explique o problema de endogeneidade que motiva o uso de variáveis instrumentais, descreva o processo de estimação para este caso, motivo pelo qual ela fornece um instrumento plausivelmente exógeno, e analise as condições necessárias para a validade do instrumento (relevância e exogeneidade). Por fim, discuta a interpretação causal do coeficiente estimado e possíveis limitações dessa estratégia, como a existência de canais diretos entre a Doutrina do Lapso e os resultados contemporâneos ou diferenças estruturais pré-existentes entre regiões anexadas e não anexadas.

@@ -173,26 +173,11 @@ An *influential* observation is one that is likely to have a substantial impact 
 
 \vfill
 
-We can define an influence measure for observation $\mathbf{x}_i$ as
-
-$$h_i = \frac{1}{n}+\frac{(x_i-\bar{x}_{(i)})^2}{\sum_{j\neq i}^n{(x_j-\bar{x}_{(i)})^2}}$$
-
-\vfill
-
-
-We can say an observation is influential if $h_i>2/n$.
-
-\vfill
-
-Notice that the analysis is conditional on $x_i$ only.
+What happens to the linear regression coefficient vector in a multiple regression when one observation is added to the sample?
 
 \vfill
 
 ### Influential Observations
-
-What happens to the linear regression coefficient vector in a multiple regression when one observation is added to the sample?
-
-\vfill
 
 We can show that the change in the linear coefficient is
 

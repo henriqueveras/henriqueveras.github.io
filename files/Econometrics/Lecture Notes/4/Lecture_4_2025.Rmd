@@ -34,7 +34,6 @@ The cases we will examine are:
 
   1. Multicollinearity
   2. Missing values
-  3. Influential observations and outliers
   
 ## Multicollinearity
 
@@ -161,91 +160,3 @@ It is important to notice, however, that all methods introduce some sort of *mea
 
 \vfill
 
-## Outliers and Influential Observations
-
-### Influential Observations
-
-Given that the LS method is based on the *squared* deviations, the estimation is likely to be influenced by **extreme** observations.
-
-\vfill
-
-An *influential* observation is one that is likely to have a substantial impact on the LS coefficients.
-
-\vfill
-
-We can define an influence measure for observation $\mathbf{x}_i$ as
-
-$$h_i = \frac{1}{n}+\frac{(x_i-\bar{x}_{(i)})^2}{\sum_{j\neq i}^n{(x_j-\bar{x}_{(i)})^2}}$$
-
-\vfill
-
-
-We can say an observation is influential if $h_i>2/n$.
-
-\vfill
-
-Notice that the analysis is conditional on $x_i$ only.
-
-\vfill
-
-### Influential Observations
-
-What happens to the linear regression coefficient vector in a multiple regression when one observation is added to the sample?
-
-\vfill
-
-We can show that the change in the linear coefficient is
-
-$$\mathbf{b}-\mathbf{b_{(i)}}=\Delta \mathbf{b}= \frac{1}{1+\mathbf{x}_i'(\mathbf{X}_{(i)}'\mathbf{X}_{(i)})^{-1}\mathbf{x}_i}(\mathbf{X}_{(i)}'\mathbf{X}_{(i)})^{-1}\mathbf{x}_i(\mathbf{y}_i-\mathbf{x}_i'\mathbf{b_{(i)}})$$
-
-\vfill
-
-$\mathbf{b}$  is computed with observation $i$ and $\mathbf{b_{(i)}}$ is computed without it.
-
-\vfill
-
-An influential measure that is used is 
-
-$$h_{ii}=\mathbf{x}_i'(\mathbf{X}_{(i)}'\mathbf{X}_{(i)})^{-1}\mathbf{x}_i$$
-
-\vfill
-
-The selection criterion would be $h_{ii}>2(K-1)/n$.
-
-\vfill
-
-### Outliers
-
-*Outliers* are observations that seem to come from outside the DGP/
-
-\vfill
-
-Some reasons for outliers on the data:
-
-  1. Data error
-  2. Unusual residuals
-  3. Observation coming from a different population
-  
-To test for this latter case, we can construct *studentized residuals* by computing the regression coefficients and the residual variance without observation $i$ for each observation in the sample and then standardizing the modified residuals.
-
-\vfill
-
-### Outliers
-
-The $i$th studentized residual is
-
-$$e(i)=\frac{e_i / \sqrt{1-h_{ii}}}{\sqrt{\frac{\mathbf{e'e}-e_i^2(1-h_{ii})}{n-1-K}}}$$
-
-\vfill
-
-Observations with $e(i)>2$ would be considered outliers.
-
-\vfill
-
-Using this procedure might be problematic as it should raise skepticism about the model specification in case a substantial proportion of the observations are considered outliers.
-
-\vfill
-
-### Outliers and Influential Points Graphically
-
-![](/Users/henriquefonseca/Desktop/temp/Rmarkdown-practice/henriqueveras.github.io/files/Econometrics/Lecture Notes/4/outlier-leverage.png)

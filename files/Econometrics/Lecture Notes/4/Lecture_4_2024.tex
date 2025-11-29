@@ -432,28 +432,14 @@ substantial impact on the LS coefficients.
 
 \vfill
 
-We can define an influence measure for observation \(\mathbf{x}_i\) as
-
-\[h_i = \frac{1}{n}+\frac{(x_i-\bar{x}_{(i)})^2}{\sum_{j\neq i}^n{(x_j-\bar{x}_{(i)})^2}}\]
-
-\vfill
-
-We can say an observation is influential if \(h_i>2/n\).
-
-\vfill
-
-Notice that the analysis is conditional on \(x_i\) only.
+What happens to the linear regression coefficient vector in a multiple
+regression when one observation is added to the sample?
 
 \vfill
 \end{frame}
 
 \begin{frame}{Influential Observations}
 \protect\hypertarget{influential-observations-1}{}
-What happens to the linear regression coefficient vector in a multiple
-regression when one observation is added to the sample?
-
-\vfill
-
 We can show that the change in the linear coefficient is
 
 \[\mathbf{b}-\mathbf{b_{(i)}}=\Delta \mathbf{b}= \frac{1}{1+\mathbf{x}_i'(\mathbf{X}_{(i)}'\mathbf{X}_{(i)})^{-1}\mathbf{x}_i}(\mathbf{X}_{(i)}'\mathbf{X}_{(i)})^{-1}\mathbf{x}_i(\mathbf{y}_i-\mathbf{x}_i'\mathbf{b_{(i)}})\]
@@ -467,7 +453,7 @@ We can show that the change in the linear coefficient is
 
 An influential measure that is used is
 
-\[h_{ii}=mathbf{x}_i'(\mathbf{X}_{(i)}'\mathbf{X}_{(i)})^{-1}\mathbf{x}_i\]
+\[h_{ii}=\mathbf{x}_i'(\mathbf{X}_{(i)}'\mathbf{X}_{(i)})^{-1}\mathbf{x}_i\]
 
 \vfill
 

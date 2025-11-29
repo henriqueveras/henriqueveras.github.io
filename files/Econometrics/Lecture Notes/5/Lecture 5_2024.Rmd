@@ -143,7 +143,7 @@ A test procedure is **consistent** if its power goes to 1 as the sample size goe
 
 The general linear hypothesis is a set of $J$ restrictions on the linear regression model
 
-$$y=\mathbf{X\beta}+\varepsilon$$
+$$\mathbf{y}=\mathbf{X}\pmb{\beta}+\pmb{\varepsilon}$$
 
 \vfill
 
@@ -159,7 +159,7 @@ $$r_{J1}\beta_1 + r_{J2}\beta_2 + \cdots + r_{JK}\beta_K=q_J$$
 
 In matrix form:
 
-$$\mathbf{R\beta}=\mathbf{q}$$
+$$\mathbf{R}\pmb{\beta}=\mathbf{q}$$
 
 \vfill
 
@@ -233,8 +233,8 @@ It must be that the mean value $\beta_k^0$ is not the one hypothesized.
 
 We now consider testing a set of $J$ linear restrictions
 
-$$H_0:\mathbf{R\beta}-\mathbf{q}=\mathbf{0}$$
-$$H_1:\mathbf{R\beta}-\mathbf{q}\neq\mathbf{0}$$ 
+$$H_0:\mathbf{R}\pmb{\beta}-\mathbf{q}=\mathbf{0}$$
+$$H_1:\mathbf{R}\pmb{\beta}-\mathbf{q}\neq\mathbf{0}$$ 
 
 Given the LS estimator $\mathbf{b}$, we are interested in the **discrepancy vector** $\mathbf{Rb}-\mathbf{q}=\mathbf{m}$.
 
@@ -252,8 +252,8 @@ Notice that $\mathbf{m}$ is normally distributed, since it is a linear combinati
 
 Let's find $\mathbf{m}$'s expected value and variance:
 
-$$\begin{split} E[\mathbf{m}|\mathbf{X}] & =\mathbf{R}E[\mathbf{\beta}|\mathbf{X}]-\mathbf{q}=0 \\
-Var[\mathbf{m}|\mathbf{X}] & =\mathbf{R}Var[\mathbf{\beta}|\mathbf{X}]\mathbf{R}'=\mathbf{R}\sigma^2(\mathbf{X'X})^{-1}\mathbf{R}'\end{split}$$
+$$\begin{split} E[\mathbf{m}|\mathbf{X}] & =\mathbf{R}E[\pmb{\beta}|\mathbf{X}]-\mathbf{q}=0 \\
+Var[\mathbf{m}|\mathbf{X}] & =\mathbf{R}Var[\pmb{\beta}|\mathbf{X}]\mathbf{R}'=\mathbf{R}\sigma^2(\mathbf{X'X})^{-1}\mathbf{R}'\end{split}$$
 
 \vfill
 
@@ -298,7 +298,7 @@ $$F(1, n-K)=\frac{(b_j-q)^2}{Est.Var(b_j)}$$
 ### The F Statistic
 
 
-Consider an alternative approach: find the sample estimate of $\mathbf{r'\beta}$
+Consider an alternative approach: find the sample estimate of $\mathbf{r'}\pmb{\beta}$
 
 $$r_1 b_1 + r_2b_2 + \cdots + r_Kb_K=\mathbf{r'b}=\hat{q}$$
 
@@ -461,7 +461,7 @@ $$\mathbf{\lambda}_*=[\mathbf{R}(\mathbf{X'X})^{-1}\mathbf{R}']^{-1}(\mathbf{Rb}
 
 \vfill
 
-Lagrange multiplier tests rely on the idea that testing whether $\lambda_*=0$ should be equivalent to testing $\mathbf{R\beta}-\mathbf{q}=\mathbf{0}$ (why?)
+Lagrange multiplier tests rely on the idea that testing whether $\lambda_*=0$ should be equivalent to testing $\mathbf{R}\pmb{\beta}-\mathbf{q}=\mathbf{0}$ (why?)
 
 \vfill
 
@@ -556,11 +556,11 @@ This expression is $1/J$ multiplied by a Wald statistic, based on the asymptotic
 
 Suppose now we are interested in testing a hypothesis that involves a nonlinear function of the regression coefficients:
 
-$$H_0: c(\mathbf{\beta})=\mathbf{q}$$
+$$H_0: c(\pmb{\beta})=\mathbf{q}$$
 
 The test statistic is
 
-$$z=\frac{c(\hat{\mathbf{\beta}})-q}{\text{estimated st. error}}$$
+$$z=\frac{c(\hat{\pmb{\beta}})-q}{\text{estimated st. error}}$$
 
 \vfill
 
@@ -650,23 +650,6 @@ A test for the proposition that Model 0 encompasses Model 1 is whether $E[\mathb
 
 \vfill
 
-### Comprehensive Approach -- The J Test
-
-The $J$ test, proposed by Davidson and MacKinnon (1981) suggests an alternative:
-
-$$\mathbf{y}=(1-\lambda)\mathbf{X\beta}+\lambda\mathbf{Z\gamma}+\mathbf{\varepsilon}$$
-
-\vfill
-
-A test of $\lambda=0$ would be against $H_1$. However, this cannot be separately estimated.
-
-\vfill
-
-The $J$ test consists of estimating $\mathbf{\gamma}$ by LS regression of $\mathbf{y}$ on $\mathbf{Z}$ followed by a LS regression of $\mathbf{y}$ on $\mathbf{X}$ and $\mathbf{Z\gamma}$
-
-\vfill
-
-Asymptotically, $\hat{\lambda}/se(\hat{\lambda})$ is distributed as standard normal.
 
 ## A Specification Test
 
@@ -697,6 +680,7 @@ Solution: use LS predictions
   2. Include higher order and other terms
   
 \vfill
+
 
 ## Structural Break and Parameter Variation
 
