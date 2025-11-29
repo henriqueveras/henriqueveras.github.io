@@ -24,7 +24,11 @@ titlefont: "Titillium Web" # Try out some font options if xelatex
 
 ### Introduction
 
- Model builders are oftern interested in understanding the *conditional variation* of one variable relative to others rather than their *joint probability*
+Econometrics is concerned with **model building**. 
+
+\vfill
+
+Model builders are oftern interested in understanding the *conditional variation* of one variable relative to others rather than their *joint probability*
 
 \vfill
 
@@ -67,11 +71,11 @@ The linear regression model consists of a set of assumptions about how a data se
 
 **Assumption A1**: The model specifies a linear relationship between $y$ and $\textbf{x}_1,\cdots, \textbf{x}_k$: 
 
-$$\mathbf{y}=\textbf{x}_1\mathbf{\beta}_1+\textbf{x}_2\mathbf{\beta}_2+\cdots+\textbf{x}_k\mathbf{\beta}_k+\mathbf{\varepsilon}$$
+$$\mathbf{y}=\textbf{x}_1\mathbf{\beta}_1+\textbf{x}_2\mathbf{\beta}_2+\cdots+\textbf{x}_k\mathbf{\beta}_k+\pmb{\varepsilon}$$
 
 \vfill
 
-Notice that the assumption is about the linearity in the parameters rather than in the $\mathbf{x}$'s.
+Notice that the assumption is about the linearity in the parameters and the disturbance term rather than in the $\mathbf{x}$'s.
 
 ### Linearity of the Regression Model
 
@@ -79,11 +83,11 @@ Each observation of a given data set looks like
 
 $$y_1=\beta_1 x_{11}+\beta_2x_{21}+\cdots\beta_kx_{k1}+\varepsilon_1$$
 
-$$y_2=\beta_1 x_{12}+\beta_2x_{22}+\cdots\beta_kx_{k2}+\varepsilon_1$$
+$$y_2=\beta_1 x_{12}+\beta_2x_{22}+\cdots\beta_kx_{k2}+\varepsilon_2$$
 
 $$\vdots$$
 
-$$y_n=\beta_1 x_{1n}+\beta_2x_{2n}+\cdots\beta_kx_{kn}+\varepsilon_1$$
+$$y_n=\beta_1 x_{1n}+\beta_2x_{2n}+\cdots\beta_kx_{kn}+\varepsilon_n$$
 
 ### Linearity of the Regression Model
 
@@ -91,9 +95,26 @@ In Matrix form:
 
 ![](/Users/henriquefonseca/Desktop/temp/Rmarkdown-practice/henriqueveras.github.io/files/Econometrics/Lecture Notes/2/matrix2.png)
 
-$$\textbf{y}=\textbf{X}\mathbf{\beta}+\mathbf{\varepsilon}$$
+$$\textbf{y}=\textbf{x}_1\mathbf{\beta}_1+\dots+\textbf{x}_K\mathbf{\beta}_K+\pmb{\varepsilon}$$
 
-### Ful Rank
+
+\begin{align}\textbf{y}=\mathbf{X}\pmb{\beta}+\pmb{\varepsilon}\end{align}
+
+### A Note on Notation
+
+We will use a boldface $\textbf{x}$ to denote a column or a row of $\textbf{X}$.
+
+\vfill
+
+Subscript $k$ will usually be used to denote columns (variables) and $i$ to denote observations.
+
+\vfill
+
+It will often be convenient to refer to a single observation as
+
+$$y_i = \mathbf{x}_i'\pmb{\beta}+\varepsilon_i$$
+
+### Full Rank
 
 **Assumption A2**: The columns of $X$ are linearly independent and there are at least $k$ observations.
 
@@ -111,7 +132,7 @@ where $\text{Size}=\text{Width}\times\text{Height}$ and $\text{Aspect Ratio}=Wid
 
 ### Regression
 
-**Assumption A3**: The disturbance is assumed to have conditional expected value zero at every observation: $E(\mathbf{\varepsilon}|\mathbf{X})=0$
+**Assumption A3**: The disturbance is assumed to have conditional expected value zero at every observation: $E(\pmb{\varepsilon}|\mathbf{X})=\mathbf{0}$
 
 \vfill
 
@@ -217,6 +238,7 @@ Crucial feature: LS regression provides us a device for "holding other things co
 
 \vfill 
 
+
 ### The LS Population and Sample Models
 
 Recall the population regression model: $E[y_i|\mathbf{x}_i]=\mathbf{x}_i'\beta$
@@ -227,11 +249,16 @@ We aim to find an estimate $\hat{y_i}=\mathbf{x}_i'\mathbf{b}$
 
 \vfill
 
-Define the *residuals* from the estimated regression as $$e_i=y_i-\mathbf{x}'_ib$$
+Define the *residuals* from the estimated regression as $$e_i=y_i-\mathbf{x}'_i\mathbf{b}$$
 
 \vfill
 
 Notice that $y_i=\mathbf{x}_i'\beta+\varepsilon_i=\mathbf{x}_i'b+e_i$
+\vfill
+
+### 
+![](/Users/henriquefonseca/Desktop/temp/Rmarkdown-practice/henriqueveras.github.io/files/Econometrics/Lecture Notes/2/figure_3.1.png)
+
 \vfill
 
 ### The LS Coefficient Vector
@@ -258,11 +285,11 @@ The necessary condition for a minimum is $$\frac{\partial S(\mathbf{b})}{\partia
 
 From **A2**, we know that $\mathbf{X}$ has full rank, which guarantees the existence of its inverse. Then, pre-multiplying both sides by $(\mathbf{X}'\mathbf{X})^{-1}$:
 
-$$b_0=(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$$
+$$\mathbf{b}_0=(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$$
 
 \vfill
 
-For the solution $b_0$ to minimize the sum of the squared residuals, the matrix $\frac{\partial^2 S(\mathbf{b})}{\partial \mathbf{b}^2}=2\mathbf{X}'\mathbf{X}$ must be positive definite.
+For the solution $\mathbf{b}_0$ to minimize the sum of the squared residuals, the matrix $\frac{\partial^2 S(\mathbf{b})}{\partial \mathbf{b}^2}=2\mathbf{X}'\mathbf{X}$ must be positive definite.
 
 
 ### Algebraic Aspects of the LS Solution
@@ -279,6 +306,10 @@ Denote the first row $\mathbf{X}$ as $\mathbf{x}_1\equiv \mathbf{i}$, two implic
 
   1. The LS residuals sum to zero.
   2. The regression hyperplane passes through the point of means of the data.
+
+\vfill
+
+It is important to note that none of these results need hold if the regression does not contain a constant term.
 
 \vfill
 
@@ -300,10 +331,10 @@ The matrix $\mathbf{M}$ is called the "*residual maker*":
 
 ### The Residual Maker
 
-Properties of the matrix M:
+Properties of the matrix $\mathbf{M}$:
 
-  1. M is symmetric 
-  2. M is idempotent
+  1. $\mathbf{M}$ is symmetric 
+  2. $\mathbf{M}$ is idempotent
   3. $\mathbf{MX}=\mathbf{0}$ (why?)
   
 ### The Projection Matrix
@@ -352,9 +383,9 @@ In some situations, we are only interested in a subset of the full set of variab
 
 Suppose we have
 
-$$\mathbf{y}=\mathbf{X}\mathbf{\beta}+\mathbf{\varepsilon}=\mathbf{X}_1\mathbf{\beta_1}+\mathbf{X}_2\mathbf{\beta}_2+\varepsilon$$
+$$\mathbf{y}=\mathbf{X}\pmb{\beta}+\pmb{\varepsilon}=\mathbf{X}_1\pmb{\beta}_1+\mathbf{X}_2\pmb{\beta}_2+\pmb{\varepsilon}$$
 
-How can we find the algebraic solution for $\mathbf{b}_2$? That is, what is the LS estimator of a given subset of parameters, $\mathbf{\beta}_2$, in $\mathbf{\beta}$?
+How can we find the algebraic solution for $\mathbf{b}_2$? That is, what is the LS estimator of a given subset of parameters, $\pmb{\beta}_2$, in $\pmb{\beta}$?
 
 ### Partial Regressions
 
@@ -379,7 +410,7 @@ $$\begin{bmatrix}
 
 Solving the system above for $\mathbf{b}_1$ yields
 
-$$\mathbf{b}_1=(\mathbf{X}_1'\mathbf{X}_1)^{-1}\mathbf{X}_1')(\mathbf{y}-\mathbf{X}_2\mathbf{b}_2)$$
+$$\mathbf{b}_1=(\mathbf{X}_1'\mathbf{X}_1)^{-1}\mathbf{X}_1'(\mathbf{y}-\mathbf{X}_2\mathbf{b}_2)$$
 
 ### Partial Regressions
 
@@ -420,6 +451,10 @@ Two questions:
   
 \vfill
 
+This process is commonly called **partialing out** or **netting out** the effect of $\mathbf{X}_1$. For this reason, the coefficients in a multiple regression are often called the partial regression coefficients.
+
+\vfill
+
 ## The FWL Theorem
 
 A special case of the FWL theorem is when we are interested in the computation of a single coefficient.
@@ -435,7 +470,7 @@ $\mathbf{b}$ and $c$, respectively.
 
 ### The FWL Theorem 
 
-Example: Suppose we are interested again in the returns to education equation $$Income=\beta_1+\beta_2 educ + \beta_3 age + \beta_4 age^2+\varepsilon$$
+Example: Suppose we are interested again in the returns to education equation $$Income_i=\beta_1+\beta_2 educ_i + \beta_3 age_i + \beta_4 age^2_i+\varepsilon_i$$
 
 \vfill
 
@@ -479,7 +514,7 @@ The result above says that the residuals in the regression of the columns of $\m
 
 
 
-Therefore, each column of $\mathbf{M}_1\mathbf{X}_2$ is the original variable, now in the form of deviations from the mean. This general result is summarized in the following corollary.
+Therefore, each column of $\mathbf{M}^0\mathbf{X}_2$ is the original variable, now in the form of deviations from the mean. This general result is summarized in the following corollary.
 
 ![](/Users/henriquefonseca/Desktop/temp/Rmarkdown-practice/henriqueveras.github.io/files/Econometrics/Lecture Notes/2/corollary_3.2.2.png)
 
@@ -511,7 +546,7 @@ We proceed as follows:
   
 ### The Partial Correlation Coefficients
 
-The square of the partial correlation coefficient is
+We will assume that there is a constant term in $\mathbf{X}$ so that the vectors of residuals $\mathbf{y}_*$ and $\mathbf{z}_*$ have zero sample means. then, the square of the partial correlation coefficient is
 
 $$r_{y,z}^{*2}=\frac{(\mathbf{z_*}' \mathbf{y_*})^2}{(\mathbf{z_*}'\mathbf{z_*})(\mathbf{y_*}'\mathbf{y_*})}$$
 
@@ -636,7 +671,7 @@ determinants of Monet's prices:
 
 \vfill
 
-**Model 2**: $\ln Price = \gamma_1(1)+\beta_2 \ln WH + \beta_3 \ln W/H + u$
+**Model 2**: $\ln Price = \gamma_1(1)+\gamma_2 \ln WH + \gamma_3 \ln W/H + u$
 
 ### An Example: Art Appreciation
 
@@ -648,7 +683,7 @@ Rewrite the model as
 
 \vfill
 
-**Model 2**: $\ln Price = \gamma_1 z_1+\beta_2 z_2 + \beta_3 z_3 + u$
+**Model 2**: $\ln Price = \gamma_1 z_1+\gamma_2 z_2 + \gamma_3 z_3 + u$
 
 \vfill
 
@@ -667,5 +702,5 @@ We can write these conditions as $Z=XP$, where $P$ is a nonsingular matrix that 
 
 \vfill
 
-In our art appreciation example, what is the relationship between $\mathbf{b}$ and $\mathbf{z}$?
+In our art appreciation example, what is the relationship between $\mathbf{b}$ and $\mathbf{d}$?
 

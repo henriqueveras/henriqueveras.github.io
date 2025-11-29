@@ -14,4 +14,8 @@ redirect_from:
 
 > [Least Squares Estimation](http://henriqueveras.github.io/files/Econometrics/Lecture Notes/3/Lecture_3.pdf)
 
+> [Data Issues](http://henriqueveras.github.io/files/Econometrics/Lecture Notes/4/Lecture_4_2025.pdf)
+
+
+
 

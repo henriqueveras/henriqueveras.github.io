@@ -38,7 +38,7 @@ header-includes:
 
 1. Mostre que podemos escrever $Var[\mathbf{b}|\mathbf{X}]$ como 
 $$Var[b_k|\mathbf{x}]=\frac{\sigma^2}{(1-R^2_k)\sum_{i=1}^n{(x_{ik}-\bar{x}_k)^2}}$$
-e discuta os cada um dos fatores que determina a precisão do estimador de MQO.
+e discuta cada um dos fatores que determina a precisão do estimador de MQO.
 
 2. Discuta por que multicolinearidade é um problema e como podemos remediar.
 
@@ -64,17 +64,20 @@ Teste a hipótese de que os coeficientes de inclinação somam 1.
     
 # Problemas práticos
 
-Considere o modelo de Solow neste exercício. Uma versāo modelo começa com uma funçāo de produçāo do tipo $Y(t)=K(t)^\alpha(A(t)L(t))^{1-\alpha}$. A evoluçāo do capital per capita é determinada pela seguinte equaçāo: $\dot{k}(t)=sk(t)^\alpha-(n+g+\delta)k(t)$, onde $k(t)\equiv K(t)/L(t)$, $s$ é a taxa de poupança, $n$ é o crescimento populacional, $g$ é o crescimento exógeno da tecnologia $A$, e $\delta$ é a depreciaçāo do capital. O nível de capital per capita no estado estacionário é dado por 
+Considere o modelo de Solow neste exercício. Uma versāo modelo começa com uma funçāo de produçāo do tipo $Y(t)=K(t)^\alpha(A(t)L(t))^{1-\alpha}$. A evoluçāo do capital per capita é determinada pela seguinte equaçāo: $\dot{k}(t)=sk(t)^\alpha-(n+g+\delta)k(t)$, onde $k(t)\equiv K(t)/L(t)$, $s$ é a taxa de poupança, $n$ é o crescimento populacional, $g$ é o crescimento exógeno da tecnologia $A$, e $\delta$ é a taxa de depreciaçāo do capital. O nível de capital per capita no estado estacionário é dado por 
 $$k^*=\left(\frac{s}{n+g+\delta}\right)^{1/(1-\alpha)}$$
 Substituindo $k^*$ na função de produçāo, tomando logs, e assumindo $A(0)=a+\varepsilon$, onde $a$ é uma constante comum a todos os países e $\varepsilon$ é um choque específico a cada país, encontramos a relaçāo 
 $$log(Y/L)=a+\frac{\alpha}{1-\alpha}log(s)-\frac{\alpha}{1-\alpha}log(n+g+\delta)+\varepsilon$$
+
+Os dados disponíveis contem informação para três grupos de países: não pertencentes à OPEC, intermediários, e pertencentes à OCDE. Para cada uma das atividades descritas abaixo, realize uma estimativa para cada um desses grupos. 
+
 1. Com base nos dados disponíveis, estime o modelo de regressão acima por MQO. Qual é o valor de $\alpha$ implicado pela estimativa?
 
 
 2. Defina o modelo estimado como $log(y)=b_0+b_1log(s)+b_2log(n+g+\delta)+e$. Podemos dizer que $\beta_1=-\beta_2$?
 
 
-3. Outra forma de testar a hipótese anterior é incorporar a restrição diretamente no modelo anterior. Escreva a equação do modelo de regressão restrito e o estime por MQO. Qual o resultado que obtemos em relação à restrição imposta?
+3. Outra forma de testar a hipótese anterior é incorporar a restrição diretamente no modelo não-restrito Escreva a equação do modelo de regressão restrito e o estime por MQO. Qual o resultado que obtemos em relação à restrição imposta?
 
 
 4. Um fato estilizado sobre o crescimento econômico é o de que, em termos gerais, $\alpha\approx1/3$. Realize o teste de hipótese correspondente. Interprete o resultado.

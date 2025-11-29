@@ -38,13 +38,30 @@ The unification of three main areas:
 
 \`\`Econometrics conveys application of mathematical statistics and the tools of statistical inference to the empirical measurement of relationships postulated by an underlying theory."
 
+## Why Econometrics?
+
+- Econometrics is not just math + stats + economics  
+- It is about answering **real questions**:
+  - Does raising the minimum wage reduce employment?
+  - What is the return to education?
+  - Do social programs reduce poverty?
+- It provides a **bridge between theory and data**
+
+
+## A Brief History
+
+- **1930s**: Creation of the Econometric Society  
+- **1944**: Trygve Haavelmo’s “Probability Approach in Econometrics”  
+- Econometrics as the *science of testing economic theory with data*  
+- Quote: “All models are wrong, but some are useful” – George Box
+
+
 ## The practice of econometrics
 
 ### The practice of econometrics
 
 Theoretical econometrics vs. applied econometrics
 
- 
   
 \hspace{3cm} This course is designed for the applied economist. 
 
@@ -118,10 +135,34 @@ We also need to consider the wartime period into the empirical model.
 
 How would you model the function $earnings=f(education)$?
 
-### The Big Data Revolution: Into a new paradigm?
+## Famous Empirical Applications
 
-Traditional econometrics: Measuring and testing theoretical relationships
+- **Labor Economics**: Minimum wage and employment  
+  - Card & Krueger (1994): natural experiment in fast food restaurants  
+- **Education**: Returns to schooling  
+  - Mincer (1974), Angrist & Krueger (1991)  
+- **Development**: Impact of conditional cash transfers  
+- **Macroeconomics**: Forecasting inflation and GDP growth  
 
-\vspace{1cm}
 
-Can Big Data replace theory?
+## Beyond Correlation: Causality
+
+- Econometrics is about more than prediction  
+- Key distinction: **Correlation vs. Causation**  
+- Identification problems:  
+  - Omitted variables  
+  - Reverse causality  
+  - Measurement error  
+- Econometrics provides tools to address them
+
+
+## New Frontiers
+
+- **Big Data** and administrative microdata  
+- Integration with **Machine Learning**  
+- Structural vs. reduced-form econometrics  
+- Opportunities: richer datasets, more complex models  
+- Challenge: theory still matters!  
+
+
+

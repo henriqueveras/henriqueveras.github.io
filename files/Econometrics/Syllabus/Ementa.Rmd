@@ -7,13 +7,13 @@ geometry: margin=1in
 
 title: "Econometria I"
 author: PIMES/UFPE
-date: "2023.2"
+date: "2025.2"
 
 email: "henrique.fonseca@ufpe.br"
-web: "henriqueveras.github.io/econometrics"
+web: "Google Classroom (rx5x7ha2)"
 officehours: "agendamento por email"
-office: "\\shrug"
-classroom: "Sala C-6"
+office: "109"
+classroom: "Sala C-14"
 classhours: "Ter-Qui (14:00 - 16:00)"
 
 fontfamily: mathpazo
@@ -182,9 +182,25 @@ Solicitações de revisão de prova devem ser feitas por escrito de acordo com o
 
 ## Avaliações
 
--   **80%** da nota será composta por dois exames (não-cumulativos) com pesos iguais.
+-   A nota será composta por três exames (não-cumulativos) com pesos iguais.
 
--   **20%** da nota será composta por listas de exercícios distribuídas ao longo do semestre.
+## Escala de Notas
+
+A conversão de notas numéricas para conceitos seguirá a seguinte escala:
+
+
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+\textbf{Nota} & \textbf{Conceito} \\
+\midrule
+8,0 -- 10,0 & A \\
+6,0 -- 7,9  & B \\
+4,0 -- 5,9  & C \\
+< 4,0       & D \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 # Programa
 
@@ -197,16 +213,12 @@ class_cal
 1.    O Modelo de Regressão Linear (Capítulo 2)
 
 
-2.    Regressão por Mínimos Quadrados (Capítulos 3, 4, 5 6)
+2.    Regressão por Mínimos Quadrados (Capítulos 3, 4, 5, 6)
 
 3.    Endogeneidade e Variáveis Instrumentais (Capítulo 8)
 
 4.    Heteroscedasticidade (Capítulo 9)
 
-5.    Modelos de Dados em Painel (Capítulo 11)
+5.    Modelos de Resposta Qualitativa (Capítulo 17)
 
-6.    Modelos de Resposta Qualitativa (Capítulo 17)
-
-7.    Método dos Momentos Generalizado (Capítulo 13)
-
-8.    Estimação por Máxima Verossimilhança (Capítulo 14)
+6.    Modelos de Dados em Painel (Capítulo 11)
