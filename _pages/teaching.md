@@ -9,17 +9,17 @@ author_profile: true
 
 > Econometrics I (Ph.D level)    
     - <sub>2025.2 > [Syllabus](http://henriqueveras.github.io/files/Econometrics/Syllabus/Ementa.pdf)
-    - <sub>2024.2
-    - <sub>2023.2
+    - 2024.2
+    - 2023.2
     
 > Topics in Development Economics (Ph.D level)    
-    - <sub>2025.1
-    - <sub>2024.1
-
+    - <sub>2025.1   
+    - 2024.1   
+    
 > Macroeconomic Theory 2   
     - <sub>2025.1
-    - <sub>2024.1
-    - <sub>2023.1
+    - 2024.1
+    - 2023.1
     
 > Economic Statistics   
     - <sub>2023.1
