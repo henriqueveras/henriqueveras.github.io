@@ -1,132 +1,110 @@
 ---
-
 layout: archive
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
---------------------
+---
 
 ### Universidade Federal de Pernambuco (Brazil)
 
-> **Econometrics I (Ph.D level)**
->
-> * <sub>2025.2</sub> — [Syllabus](http://henriqueveras.github.io/files/Econometrics/Syllabus/Ementa.pdf)
-> * <sub>2024.2</sub>
-> * <sub>2023.2</sub>
+> Econometrics I (Ph.D level)    
+    - <sub>2025.2 > [Syllabus](http://henriqueveras.github.io/files/Econometrics/Syllabus/Ementa.pdf)
+    - <sub>2024.2
+    - <sub>2023.2
+    
+> Topics in Development Economics (Ph.D level)    
+    - <sub>2025.1
+    - <sub>2024.1
 
-> **Topics in Development Economics (Ph.D level)**
->
-> * <sub>2025.1</sub>
-> * <sub>2024.1</sub>
-
-> **Macroeconomic Theory 2**
->
-> * <sub>2025.1</sub>
-> * <sub>2024.1</sub>
-> * <sub>2023.1</sub>
-
-> **Economic Statistics**
->
-> * <sub>2023.1</sub>
-
-> **Topics in Development Economics**
->
-> * <sub>2023.1</sub>
+> Macroeconomic Theory 2   
+    - <sub>2025.1
+    - <sub>2024.1
+    - <sub>2023.1
+    
+> Economic Statistics   
+    - <sub>2023.1
+    
+> Topics in Development Economics   
+    - <sub>2023.1
 
 ### Forward College
 
-> **Macroeconomic Theory**
->
-> * <sub>2022–2023 academic year</sub>
+> Macroeconomic Theory   
+    - <sub>2022-2023 acedemic year
+    
+> Microeconomic Theory    
+    - <sub>2022-2023 acedemic year
 
-> **Microeconomic Theory**
->
-> * <sub>2022–2023 academic year</sub>
-
-> **Elements of Econometrics**
->
-> * <sub>2022–2023 academic year</sub>
+> Elements of Econometrics    
+    - <sub>2022-2023 acedemic year
 
 ### Centre College
 
-> **Seminar on Causal Inference**
->
-> * <sub>Spring 2022</sub> — [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECO500-Spring_2022.pdf)
-> * <sub>Fall 2021</sub> — [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECO500-Fall_2021.pdf)
+> Seminar on Causal Inference    
+    - <sub>Spring 2022 [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECO500-Spring_2022.pdf)  
+    - Fall 2021 [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECO500-Fall_2021.pdf)
 
-> **Microeconomic Theory**
->
-> * <sub>Spring 2022</sub> — [Syllabus]([http://henriqueveras.github.io/files/ECO](http://henriqueveras.github.io/files/ECO) 220 Spring 2022 Syllabus.pdf)
-> * <sub>Fall 2021</sub>
+> Microeconomic Theory    
+    - <sub>Spring 2022 [Syllabus](http://henriqueveras.github.io/files/ECO 220 Spring 2022 Syllabus.pdf)  
+    - Fall 2021
 
-### Oberlin College
+### Obelin College
 
-> **Seminar on Comparative Economic Development**
->
-> * <sub>Fall 2020</sub> — [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECON413-Fall_2020.pdf)
-> * <sub>Spring 2020</sub> — [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECON413-Spring_2020.pdf)
+> Seminar on Comparative Economic Development    
+    - <sub>Fall 2020 [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECON413-Fall_2020.pdf)  
+    - Spring 2020 [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECON413-Spring_2020.pdf)
 
-> **Intermediate Microeconomics**
->
-> * <sub>Spring 2021</sub> — [Syllabus]([http://henriqueveras.github.io/files/Econ](http://henriqueveras.github.io/files/Econ) 253 Spring 2021 Syllabus.pdf)
-> * <sub>Fall 2020</sub>
+>Intermediate Microeconomics  
+    - <sub>Spring 2021 [Syllabus](http://henriqueveras.github.io/files/Econ 253 Spring 2021 Syllabus.pdf)    
+    - Fall 2020
 
-> **Principles of Economics**
->
-> * <sub>Fall 2020</sub> — [Syllabus](http://henriqueveras.github.io/files/Syllabus_Fall_2020.pdf)
-> * <sub>Spring 2020</sub>
-> * <sub>Fall 2019</sub>
+>Principles of Economics  
+    - <sub>Fall 2020 [Syllabus](http://henriqueveras.github.io/files/Syllabus_Fall_2020.pdf)  
+    - Spring 2020   
+    - Fall 2019
 
-> **Economic Development**
->
-> * <sub>Spring 2021</sub> — [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECON209-Spring2021.pdf)
-> * <sub>Fall 2019</sub>
-
+> Economic Development   
+    - <sub>Spring 2021 [Syllabus](http://henriqueveras.github.io/files/Syllabus-ECON209-Spring2021.pdf)   
+    - Fall 2019
+  
 ### University of Illinois at Urbana-Champaign
 
-> **Economics Statistics II**
->
-> * <sub>Summer 2016</sub>
-> * <sub>Summer 2015</sub>
-> * <sub>Summer 2014</sub>
+>Economics Statistics II   
+    - <sub>Summer 2016   
+    - Summer 2015   
+    - Summer 2014
 
-> **Development Economics**
->
-> * <sub>Spring 2019</sub> — [Syllabus](http://henriqueveras.github.io/files/Syllabus-Spring-2019.pdf)
-> * <sub>Fall 2018</sub>
-> * <sub>Summer 2017</sub>
-> * <sub>Spring 2017</sub>
-> * <sub>Fall 2016</sub>
-> * <sub>Spring 2016</sub>
-> * <sub>Fall 2015</sub>
-
+>Development Economics   
+    - <sub>Spring 2019 [Syllabus](http://henriqueveras.github.io/files/Syllabus-Spring-2019.pdf)   
+    - Fall 2018  
+    - Summer 2017   
+    - Spring 2017   
+    - Fall 2016    
+    - Spring 2016    
+    - Fall 2015
+  
 ## Teaching Assistant
 
 ### University of Illinois at Urbana-Champaign
 
-> **Economics Statistics I**
->
-> * <sub>Spring 2018</sub>
-> * <sub>Fall 2017</sub>
-
-> **Intermediate Macroeconomic Theory**
->
-> * <sub>Spring 2015</sub> (Head TA)
-
-> **Economics Statistics II**
->
-> * <sub>Fall 2014</sub>
-
-> **Macroeconomic Principles**
->
-> * <sub>Spring 2014</sub>
-
-> **Microeconomic Principles**
->
-> * <sub>Fall 2013</sub>
-
+>Economics Statistics I   
+    - <sub>Spring 2018   
+    - Fall 2017
+  
+> Intermediate Macroeconomic Theory   
+    - <sub>Spring 2015 (Head TA)
+  
+> Economics Statistics II   
+    - <sub>Fall 2014
+  
+> Macroeconomic Principles   
+    - <sub>Spring 2014
+  
+>Microeconomic Principles   
+    - <sub>Fall 2013
+  
 ### Universidade Federal de Pernambuco (Brazil)
 
-> **Monetary Economics**
->
-> * <sub>Spring 2011</sub>
+> Monetary Economics   
+    - <sub>Spring 2011
+  
