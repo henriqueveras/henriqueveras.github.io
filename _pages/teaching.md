@@ -12,7 +12,7 @@ author_profile: true
     - 2024.2   
     - 2023.2
     
-> Topics in Development Economics (Ph.D level)  
+> Topics in Econometrics Applied to Development Economics  (Ph.D level)  
     - <sub>2025.1 [Syllabus](http://henriqueveras.github.io/files/Ementa-Curso_Desenvolvimento_2025.pdf)  
     - 2024.1   
     
