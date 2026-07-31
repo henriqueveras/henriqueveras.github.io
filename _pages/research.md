@@ -15,14 +15,6 @@ author_profile: true
   {% include archive-single.html %}  
 {% endfor %}
 
-## Working Papers
-
-> [**Old But Gold: Historical Pathways and Path Dependence**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4513384)
-With Diogo Baerlocher, Diego Firmino, Guilherme Lambais, and Eustaquio Reis. (Accepted at the **Journal of Urban Economics**)
-
-> [**Early-Life Exposure to Malaria and Adult Mortality: Evidence from the Brazilian Eradication Campaign**](https://drive.google.com/file/d/1dIZK5thBKYu-IsduU5E65SdG_z4sQW8h/view?usp=sharing)  
-With Diogo Baerlocher.
-
 ## Publications
 
 > [**Do Bigger Legislatures Lead to Bigger Government? Evidence from a Brazilian Municipal Council Reform**](https://www.jstor.org/stable/27302237) **Economía  - Lacea Journal**, 2023, 22(1), 117-134.   
@@ -34,7 +26,16 @@ With Rodrigo Schneider
 **The B.E. Journal of Macroeconomics**, 2015, 15(2), 727-768.   
 With Diogo Baerlocher and Marcelo Eduardo Alves Silva. 
 
-### In Portuguese
+
+## Working Papers
+
+> [**Old But Gold: Historical Pathways and Path Dependence**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4513384)
+With Diogo Baerlocher, Diego Firmino, Guilherme Lambais, and Eustaquio Reis. (Accepted at the **Journal of Urban Economics**)
+
+> [**Early-Life Exposure to Malaria and Adult Mortality: Evidence from the Brazilian Eradication Campaign**](https://drive.google.com/file/d/1dIZK5thBKYu-IsduU5E65SdG_z4sQW8h/view?usp=sharing)  
+With Diogo Baerlocher.
+
+### Publications in Portuguese
 
 > [**Analysis of Brazilian Exports: A Gravity-Based Estimate for the Grape Industry**](http://www.iea.sp.gov.br/out/verTexto.php?codTexto=12179)   
 **Revista de Economia Agrícola**, 2010 , 57(2), 81-98.  
