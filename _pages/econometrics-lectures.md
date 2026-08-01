@@ -1,10 +1,10 @@
 ---
 layout: archive
 title: "Lecture Notes"
-permalink: /_pages/econometrics-lectures
+permalink: /teaching/econometrics/lecture-notes/
 author_profile: true
-redirect_from: 
-  - /md/
+redirect_from:
+  - /_pages/econometrics-lectures
   - /econometrics-lectures.html
 ---
 

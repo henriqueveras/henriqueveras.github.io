@@ -2,12 +2,13 @@
 permalink: /bio/
 title: "Bio"
 author_profile: true
-redirect_from: 
-  - /md/
+redirect_from:
   - /bio.html
 ---
 
-## [Full CV](http://henriqueveras.github.io/files/Henrique_CV_Dec_2025.pdf)
+{% include base_path %}
+
+## [Full CV]({{ base_path }}/files/Henrique_CV_Dec_2025.pdf)
 
 
 ## Education

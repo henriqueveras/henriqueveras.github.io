@@ -1,0 +1,536 @@
+/* ==========================================================================
+   Custom theme layer
+   --------------------------------------------------------------------------
+   Imported last in assets/css/main.scss so these rules win over the
+   Minimal Mistakes defaults. Written in plain-CSS-compatible syntax on
+   purpose: it compiles identically whether or not Sass features are used,
+   which keeps the GitHub Pages build from breaking on a typo.
+   ========================================================================== */
+
+:root {
+  --ink:         #16202c;
+  --body-text:   #333c49;
+  --muted:       #6b7583;
+  --rule:        #e5e8ec;
+  --rule-soft:   #f0f2f5;
+  --accent:      #1a5276;
+  --accent-hov:  #103d58;
+  --accent-soft: #eef3f7;
+  --page-bg:     #ffffff;
+  --serif:       "Source Serif 4", "Iowan Old Style", Palatino, Georgia, serif;
+  --sans:        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Base typography
+   -------------------------------------------------------------------------- */
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--body-text);
+  background-color: var(--page-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page__content,
+.page__content p,
+.page__content li {
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--body-text);
+}
+
+.page__content p {
+  margin: 0 0 1.15em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title {
+  font-family: var(--serif);
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+}
+
+/* Page heading, with a hairline rule beneath it. */
+.page__title {
+  font-size: 2.1rem;
+  margin: 0 0 1.4rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.page__content h2 {
+  font-size: 1.45rem;
+  margin: 2.4rem 0 1rem;
+}
+
+.page__content h3 {
+  font-size: 1.18rem;
+  margin: 1.9rem 0 0.7rem;
+}
+
+/* Links: accent coloured, underlined only on the underline offset so
+   descenders stay legible. */
+a,
+.page__content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(26, 82, 118, 0.35);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover,
+.page__content a:hover {
+  color: var(--accent-hov);
+  text-decoration-color: var(--accent-hov);
+}
+
+a:visited,
+.page__content a:visited {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Masthead / navigation
+   -------------------------------------------------------------------------- */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  backdrop-filter: saturate(180%) blur(8px);
+}
+
+.masthead__inner-wrap {
+  padding: 0.9em 1em;
+}
+
+.site-title {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--accent);
+}
+
+.greedy-nav {
+  background: transparent;
+}
+
+.greedy-nav a {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  padding: 0.35rem 0;
+  margin-right: 1.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+.greedy-nav a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--rule);
+}
+
+.greedy-nav a.active,
+.greedy-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+.greedy-nav .visible-links li:last-child a {
+  margin-right: 0;
+}
+
+.greedy-nav__toggle {
+  color: var(--muted);
+}
+
+.greedy-nav .hidden-links {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(22, 32, 44, 0.1);
+}
+
+.greedy-nav .hidden-links a {
+  margin-right: 0;
+  color: var(--body-text);
+}
+
+/* --------------------------------------------------------------------------
+   Author sidebar
+   -------------------------------------------------------------------------- */
+
+.sidebar {
+  font-family: var(--sans);
+}
+
+/* The source portrait is 3:4, so crop it to a circle with object-fit and bias
+   the framing upward (8%) to keep the top of the head inside the circle. */
+.sidebar .author__avatar img,
+.author__avatar img {
+  width: 150px;
+  max-width: 150px;
+  height: 150px;
+  aspect-ratio: 1; /* not "1 / 1": libsass would fold the slash into division */
+  object-fit: cover;
+  object-position: 50% 8%;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 10px rgba(22, 32, 44, 0.08);
+}
+
+.author__name {
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0.85rem 0 0.2rem;
+}
+
+.author__bio {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+}
+
+.author__urls-wrapper {
+  font-size: 0.85rem;
+}
+
+.author__urls {
+  border: 0;
+  padding: 0;
+  margin-top: 0.6rem;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 0.8rem;
+}
+
+.author__urls li {
+  padding: 0.2rem 0;
+  line-height: 1.45;
+  color: var(--muted);
+  /* Long affiliation names must wrap rather than run past the sidebar. */
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.author__urls a {
+  color: var(--body-text);
+  text-decoration: none;
+}
+
+.author__urls a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.author__urls .fa,
+.author__urls .fas,
+.author__urls .fab,
+.author__urls .ai {
+  color: var(--muted);
+  margin-right: 0.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   Publication list
+   Two-column layout: a year gutter on the left, entry body on the right.
+   -------------------------------------------------------------------------- */
+
+.pub-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.pub {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 0 1.1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.pub:last-child {
+  border-bottom: 0;
+}
+
+.pub__year {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.22rem;
+  letter-spacing: 0.02em;
+}
+
+.pub__title {
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 0.3rem;
+  color: var(--ink);
+}
+
+.pub__title a {
+  color: var(--ink);
+  text-decoration: none;
+  background-image: linear-gradient(var(--rule), var(--rule));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
+.pub__title a:hover {
+  color: var(--accent);
+  background-image: linear-gradient(var(--accent), var(--accent));
+}
+
+.pub__venue {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--body-text);
+  margin: 0 0 0.2rem;
+}
+
+.pub__venue cite {
+  font-style: italic;
+}
+
+.pub__meta {
+  font-variant-numeric: tabular-nums;
+  font-style: normal;
+  color: var(--muted);
+}
+
+.pub__authors {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Small pill used to tag an entry (e.g. "R&R", "New"). */
+.pub__badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.14rem 0.5rem;
+  margin-left: 0.4rem;
+  vertical-align: 0.12em;
+}
+
+.research__scholar-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: -0.5rem 0 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Course list (teaching page)
+   -------------------------------------------------------------------------- */
+
+.teach-inst {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 2rem 0 0.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.course-list {
+  list-style: none;
+  margin: 0 0 1.6rem;
+  padding: 0;
+}
+
+.course {
+  padding: 0.72rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.course:last-child {
+  border-bottom: 0;
+}
+
+.course__name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.18rem;
+}
+
+.course__level {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--rule-soft);
+  border-radius: 999px;
+  padding: 0.12rem 0.48rem;
+  margin-left: 0.4rem;
+  vertical-align: 0.14em;
+}
+
+.course__terms {
+  display: block;
+  font-size: 0.87rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.course__terms a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 82, 118, 0.3);
+}
+
+.course__terms a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Home page intro
+   -------------------------------------------------------------------------- */
+
+/* The home page renders inside .page__content, whose element selectors
+   outrank a bare class, so these need the wrapper in front. */
+.intro__lead,
+.page__content p.intro__lead {
+  font-family: var(--serif);
+  font-size: 1.28rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+}
+
+.intro__fields {
+  margin-top: 1.6rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.intro__fields-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
+.field-tags,
+.page__content ul.field-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.field-tags li,
+.page__content ul.field-tags li {
+  font-size: 0.84rem;
+  color: var(--body-text);
+  background: var(--rule-soft);
+  border-radius: 999px;
+  padding: 0.24rem 0.72rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Misc
+   -------------------------------------------------------------------------- */
+
+/* The theme's blockquote is used a lot in this site's older markdown; make it
+   quieter so it reads as an indented note rather than a shouty pull-quote. */
+.page__content blockquote {
+  border-left: 2px solid var(--rule);
+  margin: 0 0 1.1em;
+  padding-left: 1.1em;
+  font-style: normal;
+  color: var(--body-text);
+}
+
+.page__footer {
+  background: #fbfbfc;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+}
+
+.page__footer a {
+  color: var(--muted);
+}
+
+.page__footer footer {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+/* Keep long PDF/journal URLs from forcing a horizontal scrollbar. */
+.page__content a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 37.5em) {
+  html {
+    font-size: 16px;
+  }
+
+  .page__title {
+    font-size: 1.7rem;
+  }
+
+  .pub {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .pub__year {
+    padding-top: 0;
+  }
+}

@@ -1,13 +1,15 @@
 ---
 layout: archive
 title: "Econometria I (PIMES/UFPE)"
-permalink: /_pages/econometrics/
+permalink: /teaching/econometrics/
 author_profile: true
-redirect_from: 
-  - /md/
+redirect_from:
+  - /_pages/econometrics
   - /econometrics.html
 ---
 
-> [Syllabus](http://henriqueveras.github.io/files/Econometrics/Syllabus/Ementa.pdf)
+{% include base_path %}
 
-> [Lecture Notes](http://henriqueveras.github.io/_pages/econometrics-lectures)
+> [Syllabus]({{ base_path }}/files/Ementa.pdf)
+
+> [Lecture Notes]({{ base_path }}/teaching/econometrics/lecture-notes/)
