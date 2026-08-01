@@ -54,5 +54,5 @@ With Ecio de Farias Costa, Emanoel de Souza Barros, and Leonardo Ferraz Xavier.
 
 ## Selected Work in Progress
 
-> **From Stagnation to Growth: The Role of Expropriation Risk on the Fertility Transition.**   
-With Diogo Baerlocher and Stephen L. Parente.
+> **Behavioral Selection and Targeting in Water Utilities.**   
+With Carolina Tojal and Evan Kresch.
