@@ -11,13 +11,9 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}  
-{% endfor %}
-
 ## Publications
 
-> [[**Old But Gold: Historical Pathways and Path Dependence**](https://www.sciencedirect.com/science/article/abs/pii/S0094119026000343) **Journal of Urban Economics**, 2026, 152, 103863.   
+> [**Old But Gold: Historical Pathways and Path Dependence**](https://www.sciencedirect.com/science/article/abs/pii/S0094119026000343) **Journal of Urban Economics**, 2026, 152, 103863.   
 With Diogo Baerlocher, Diego Firmino, Guilherme Lambais, and Eustaquio Reis.
 
 > [**Do Bigger Legislatures Lead to Bigger Government? Evidence from a Brazilian Municipal Council Reform**](https://www.jstor.org/stable/27302237) **Economía  - Lacea Journal**, 2023, 22(1), 117-134.   
