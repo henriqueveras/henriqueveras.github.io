@@ -1,5 +1,22 @@
+# macOS
 .DS_Store
+
+# R / RStudio
 .Rhistory
 .RData
+.Ruserdata
 .Rproj.user
+*_cache/
+files/cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Jekyll build output
 _site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby
+vendor/bundle/

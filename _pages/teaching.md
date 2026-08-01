@@ -57,7 +57,7 @@ author_profile: true
   </li>
   <li class="course">
     <span class="course__name">Microeconomic Theory</span>
-    <span class="course__terms">Spring 2022 <a href="{{ base_path }}/files/ECO%20220%20Spring%202022%20Syllabus.pdf">Syllabus</a> &middot; Fall 2021</span>
+    <span class="course__terms">Spring 2022 <a href="{{ base_path }}/files/ECO%20220%20Spring%202022%20Syllabus.pdf">Syllabus</a> &middot; Fall 2021 <a href="{{ base_path }}/files/ECO%20220%20Fall%202021%20Syllabus.pdf">Syllabus</a></span>
   </li>
 </ul>
 
