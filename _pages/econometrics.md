@@ -11,5 +11,3 @@ redirect_from:
 {% include base_path %}
 
 > [Syllabus]({{ base_path }}/files/Ementa.pdf)
-
-> [Lecture Notes]({{ base_path }}/teaching/econometrics/lecture-notes/)
